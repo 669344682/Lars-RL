@@ -12,8 +12,8 @@ Auf Dateien Ohne Copyright-Vermerk, bzw. Dateien von Dritten trifft oberes natü
 
 
 IMPORTANT:
-The files / scripts / content created by me (recognizable by the copyright notice at the beginning of the file "FirstOne Media") are licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/). You are not allowed without my permission, to use these files commercially or on a commercial server (includes donations) or removing the copyright notices.
+The files / scripts / content created by me (recognizable by the copyright notice at the beginning of the file "FirstOne Media") are licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/). You are not allowed without my permission, to use these files commercially or on a commercial server (includes donations, IF there is any consideration for the donations) or removing the copyright notices.
 
-Some maps have been created by ViCE and may not be used commercially or on a commercial server (including donations, IF there is any consideration for the donations), re-published, nor may the copyright notice be removed. These maps are also recognizable by the copyright notice at the top of the .map file.
+Some maps have been created by ViCE and may not be used commercially or on a commercial server (including donations), re-published, nor may the copyright notice be removed. These maps are also recognizable by the copyright notice at the top of the .map file.
 
 On files Without copyright notice, or files from third parties of course, the above doesn't apply.
