@@ -1,0 +1,20 @@
+<map edf:definitions="editor_main">
+    <removeWorldObject id="removeWorldObject (nwwarhus) (1)" radius="28.236382" interior="0" model="3624" lodModel="3710" posX="2788.1563" posY="-2417.7891" posZ="16.72656" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (nwwarhus) (2)" radius="28.236382" interior="0" model="3624" lodModel="3710" posX="2788.1563" posY="-2455.8828" posZ="16.72656" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (lasdkrtgrp2) (1)" radius="13.891983" interior="0" model="3574" lodModel="3744" posX="2789.2109" posY="-2377.625" posZ="15.21875" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (dckwrkhut) (1)" radius="8.8088837" interior="0" model="3626" lodModel="3770" posX="2795.8281" posY="-2394.2422" posZ="14.17188" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (1)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2783.7813" posY="-2448.4766" posZ="14.63281" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (2)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2791.9531" posY="-2410.2109" posZ="14.65625" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (3)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2797.5156" posY="-2448.3437" posZ="14.63281" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (4)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2783.7813" posY="-2425.3516" posZ="14.63281" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (nwwarhus) (3)" radius="28.236382" interior="0" model="3624" lodModel="3710" posX="2788.1563" posY="-2493.9844" posZ="16.72656" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (5)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2791.9531" posY="-2463.8203" posZ="14.63281" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (6)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2791.9531" posY="-2486.9609" posZ="14.63281" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (industshelves) (7)" radius="8.426527" interior="0" model="3761" lodModel="0" posX="2791.9531" posY="-2501.8359" posZ="14.63281" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (redockrane_LAS) (1)" radius="23.27807" interior="0" model="3620" lodModel="3746" posX="2814.2656" posY="-2521.4922" posZ="25.51563" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (redockrane_LAS) (2)" radius="23.27807" interior="0" model="3620" lodModel="3746" posX="2814.2656" posY="-2356.5703" posZ="25.51563" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (laxrf_cargotop) (1)" radius="42.945503" interior="0" model="3724" lodModel="5352" posX="2838.1953" posY="-2488.6641" posZ="29.3125" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (laxrf_cargotop) (2)" radius="42.945503" interior="0" model="3724" lodModel="5164" posX="2838.1953" posY="-2407.1406" posZ="29.3125" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <object id="object (MagnoCrane_04) (1)" breakable="true" interior="0" collisions="true" alpha="255" model="1381" doublesided="false" scale="1" dimension="0" posX="2767.5" posY="-2405.8999" posZ="14" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (ContainerCrane_02) (1)" breakable="true" interior="0" collisions="true" alpha="255" model="1386" doublesided="false" scale="1" dimension="0" posX="2773.1001" posY="-2408.3999" posZ="20.1" rotX="0" rotY="0" rotZ="0"></object>
+</map>

@@ -1,0 +1,57 @@
+HeyHo,
+
+da ich seit einiger Zeit nichts mehr mit MTA zutun hab, veröffentliche ich hier mein Selfmade "Lars-RL", welches ich sporadisch zwischen 2013 und 2018 entwickelt habe.
+Zuletzt wurde das Script intensiv zwischen 2016 und 2017 für Skyline Gaming weiterentwickelt.
+Da wir das Projekt jedoch wegen der Zeit und dem allgemeinem Spielerrükgang letztes Jahr eingestellt haben, veröffentliche ich es nun.
+Einige Sachen, welche z.B. in den Videos zu sehen sind, sind im Script möglicherweise nicht enthalten, da diese nicht von mir erstellt wurden und nicht Public-Domain sind.
+
+
+Ganz Grob, aus dem Gedächtnis aufgezählt ist folgendes enthalten:
+- Account-System (MySQL)
+- dxGUI System, danke an @Jake (fertig)
+- Info- und Notification-Boxes (fertig)
+- Dynamische Produktliste im GTA V Style (fertig, wird bspw. in den Shops verwendet)
+- Realweather via openweathermap.org
+- Logs (fertig, MySQL)
+- Banksystem (fertig)
+- Franchise-System (fertig)
+- Haus-System mit Einrichtung (fertig)
+- Inventar-System (fertig, fungiert gleichzeitig als Haus-Inventar und Kofferraum, auf prakisch jedem mta-element lässt sich ein Inventar erstellen)
+- iPhone
+- Etliche Shops (ferig)
+- Fahrzeug-System
+	-> Blitzer (fertig)
+	-> Autohäuser
+	-> Tankstellen (fertig)
+	-> Tuning-System (fertig)
+	-> Custom paintjobs (fertig)
+	-> Neon (fertig)
+	
+
+
+Auch wenn einiges als fertig gekennzeichnet ist, gibt es in den einzelnen Systemen dinge, die noch nicht ganz fertig waren.
+Bugs sind sicher auch vorhanden, der großteil wurde nicht ausführlich getestet.
+Zu der Performance kann ich auch nicht viel sagen, da nie mit mehr als 6 oder 7 Leuten gleichzeitig getestet wurde.
+Sicherlich aber könnte besonders das iPhone eniges an resourcen ziehen.
+
+Um das iPhone und Realweather voll zu nutzen, wird ein Webserver mit PHP5.5+, MySQLi, JSON, XML, curl benötigt.
+Shared-Webhostings werden warscheinlich nicht gehen, weil bspw. exec wird benötigt (youtube-dl) oder allow_url_fopen.
+
+Einzelne Teile aus dem Script können mMn realtiv leicht in andere Scripte integriert werden, da vieles relativ simpel und dynamisch gehalten ist, bspw. die Produktliste, das Tuning, Inventar etc.
+
+
+Das Script kann auf GitHub heruntergeladen werden:
+Ich werde keinen Support geben und warscheinlich auch nichts mehr an dem Script machen. Sollte jemand bspw. einen Bug gefixxt haben, dann könnt ihr mir gerne die gefixxten dateien schicken oder direkt auf github einen pull request erstellen, ich werde dass dann in den master branch mergen.
+
+
+WICHTIG!: Die von mir erstellten Dateien/Scripte/Inhalte (erkennbar an dem Copyright-Hinweis an Anfang der Datei) dürfen ohne meine Schriftliche Erlaubnis weder kommerziell bzw. auf einem kommerziell geführten Server (schließt auch Spenden ein) verwendet werden, noch darf das Copyright entfernt werden.
+
+Folgende Maps wurden von @ViCE erstellt und dürfen weder kommerziell bzw. auf einem kommerziell geführten Server (schließt auch Spenden ein) verwendet werden, oder erneut veröffentlicht werden noch darf der Copyright vermerk entfernt werden: XYZ
+
+
+
+Rießen Dankeschön auch nochmal an @fs626 für die Hilfe und erstellung der Videos und an @ViCE für die Maps.
+
+
+Gruß
+Lars

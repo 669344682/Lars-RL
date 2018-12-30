@@ -1,0 +1,14 @@
+Settings anpassen in /LUA/settings
+
+
+Für iPhone und Realweather:
+1. Bei apiSalz in /LUA/settings/settings_server.lua random string rein, und diesen ebenfalls in /PHP/api/CONFIG.php bei SALZ eintragen.
+2. in /PHP/CONFIG.php CHART_UPDATE_SECRET random string eintragen.
+3. Bei https://openweathermap.org/appid gratis account erstellen und apikey holen. Apikey bei openweathermap_apikey in /PHP/CONFIG.php eintragen.
+4. in /PHP/iphone/music/api.php die mysql-daten der Datenbank eintragen.
+5. Den Inhalt des PHP-Ordners auf den Webserver hochladen. Benötigt werden folgende php-pakete: curl,xml,json,gd,mysql Ausserdem muss exec() nutzbar sein. Auf Windows-Servern wird einiges möglicherweise nicht funktionieren.
+6. In /LUA/settings_both.lua den Link zur API anpassen, also der wo der inhalt des ordners PHP hochgeladen wurde.
+7. Domain der API in /LUA/client/browser_whitelist.lua oben eintragen.
+8. Cronjob für Musik-Charts erstellen:
+0 5 * * * wget -q -O /dev/null http://beispiel.de/PHP/api/163.php?update_charts=CHART_UPDATE_SECRET >/dev/null 2>&1
+Bei CHART_UPDATE_SECRET muss der selbe string rein, wie in /PHP/CONFIG.php eingetragen.

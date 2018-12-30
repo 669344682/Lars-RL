@@ -1,0 +1,49 @@
+Coding-Stil:
+
+- Keine Semikolons
+- Nach Komma Leerzeichen setzen (statt {a,b,b} also {a, b, c})
+
+- Anonyme funktionen wie folgt:
+addEventHandler("onClientRender", root, function()
+	-- kot
+end)
+
+- Zur übersicht besodners bei mehreren Variablen mit Tab einrücken, beispiel
+
+STATT:
+local kurz = "Hi"
+local laengerwert = "Hi"
+local viellaengererwert = "Hi"
+ALSO:
+local kurz					= "Hi"
+local laengerwert			= "Hi"
+local viellaengererwert = "Hi"
+
+- Abfragen etc. mit 4er Tab einrücken, beispiel:
+function hi(arg1, arg2)
+	if (arg1 == arg2) then
+		if (true == false) then
+			--kot
+		end
+	else
+		-- kot
+	end
+end
+
+
+- Keine Leerzeichen bei Klammern, beispiele:
+
+STATT:
+outputChatBox ( "Hello", player )
+ALSO:
+outputChatBox("Hello", player)
+
+
+
+- Abfragen in Klammern
+STATT:
+if player == source then
+ALSO:
+if (player == source) then
+
+

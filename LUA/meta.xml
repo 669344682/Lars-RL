@@ -1,0 +1,1195 @@
+<meta>
+	<info author="FirstOne Media" version="0.2" />
+	<min_mta_version client="1.5.5" server="1.5.5" />
+	<oop>true</oop>
+	
+	<!-- Usefull Functions -->
+	<script src="usefull/json.lua"								type="shared" />
+	<script src="usefull/utility.lua"							type="shared" />
+	<script src="usefull/image3D_c.lua"							type="client" />
+	<script src="usefull/matrix.lua"							type="shared" />
+	<script src="usefull/player.lua"							type="shared" />
+	<script src="usefull/player_c.lua"							type="client" />
+	<script src="usefull/tar.lua"								type="client" />
+	<script src="usefull/classlib.lua"							type="shared" />
+	<script src="usefull/bone_attach/bone_attach.lua"			type="server" />
+	<script src="usefull/bone_attach/bone_attach_c.lua"			type="client" />	
+	<script src="usefull/bone_attach/attach_func.lua" 			type="server" />
+	<script src="usefull/bone_attach/attach_func.lua"			type="client" />
+	<script src="usefull/bone_attach/bone_pos_rot.lua"			type="client" />
+	
+	<!-- Settings -->
+	<script src="settings/settings_both.lua"					type="shared" />
+	<script src="settings/settings_server.lua"					type="server" />
+	
+	<script src="usefull/dev_server.lua"						type="server" />
+	
+	<!-- Client -->
+	<script src="client/definitions.lua"						type="client" />
+	<script src="client/browser_whitelist.lua"					type="client" />
+	<script src="client/dxGUI.lua"								type="client" />	
+	<script src="client/sounds.lua"								type="client" />	
+	<script src="client/ghostmode.lua"							type="client" />	
+	<script src="client/infobox.lua"							type="client" />	
+	<script src="client/nametag.lua"							type="client" />	
+	<script src="client/productlist.lua"						type="client" />	
+	<script src="client/textures.lua"							type="client" />	
+	<script src="client/hospital.lua"							type="client" />	
+	
+	<!-- Server -->
+	<script src="server/MySQL.lua"								type="server" />
+	<script src="server/datasave.lua"							type="server" />
+	<script src="server/chat.lua"								type="server" />
+	<script src="server/death.lua"								type="server" />
+	<script src="server/ghostmode.lua"							type="server" />
+	<script src="server/playingtime.lua"						type="server" />
+	<script src="server/spawn.lua"								type="server" />
+	<script src="server/weather.lua"							type="server" />
+	
+	<!-- Systems -->
+	<script src="systems/admin/logs.lua"						type="server" />
+	
+	<script src="systems/anticheat/client.lua"					type="client" />	
+	<script src="systems/anticheat/server.lua"					type="server" />
+	
+	<script src="systems/inventory/use_server.lua" 				type="server" />
+	<script src="systems/inventory/server.lua" 					type="server" />
+	<script src="systems/inventory/client.lua" 					type="client" />	
+	
+	<script src="systems/bank/client.lua"						type="client" />	
+	<script src="systems/bank/server.lua"						type="server" />
+	<script src="systems/bank/bankrob_client.lua"				type="client" />	
+	<script src="systems/bank/bankrob_server.lua"				type="server" />
+	
+	<script src="systems/click/client.lua"						type="client" />	
+	<script src="systems/click/server.lua"						type="server" />
+	
+	<script src="systems/environment/roydigerhund.lua"			type="server" />
+	
+	<script src="systems/franchise/server.lua" 					type="server" />
+	<script src="systems/franchise/client.lua" 					type="client" />	
+	
+	<script src="systems/iphone/server.lua" 					type="server" />
+	<script src="systems/iphone/client.lua" 					type="client" />	
+	
+	
+	
+	<script src="systems/jobs/server.lua" 					type="server" />
+	<script src="systems/jobs/client.lua" 					type="client" />
+	
+	<script src="systems/jobs/forklift_server.lua" 					type="server" />
+	<script src="systems/jobs/forklift_client.lua" 					type="client" />
+	
+	<script src="systems/jobs/trash_server.lua" 					type="server" />
+	<script src="systems/jobs/farmer_server.lua" 					type="server" />
+	
+	<script src="systems/jobs/hafen_server.lua" 					type="server" />
+	<script src="systems/jobs/hafen_client.lua" 					type="client" />
+	
+	<map src="systems/jobs/stapler_train.map" />
+	<map src="systems/jobs/hafen.map" />
+	
+	<script src="systems/house/interiors.lua" 					type="shared" />
+	<script src="systems/house/server.lua" 						type="server" />
+	<script src="systems/house/client.lua" 						type="client" />	
+	
+	<script src="systems/objectmover/server.lua" 				type="server" />
+	<script src="systems/objectmover/client.lua" 				type="client" />	
+	
+	<script src="systems/register_login/account.lua"			type="server" />
+	<script src="systems/register_login/login_client.lua" 		type="client" />	
+	<script src="systems/register_login/register_client.lua" 	type="client" />	
+	<script src="systems/register_login/server.lua" 			type="server" />
+	
+	<script src="systems/shops/client.lua"						type="client" />	
+	<script src="systems/shops/server.lua"						type="server" />
+	<script src="systems/shops/shop-burger_server.lua"			type="server" />
+	<script src="systems/shops/shop-burger_client.lua"			type="client" />	
+	<script src="systems/shops/shop-furniture_server.lua"		type="server" />
+	<script src="systems/shops/shop-furniture_client.lua"		type="client" />	
+	<script src="systems/shops/shop-pizza_server.lua"			type="server" />
+	<script src="systems/shops/shop-pizza_client.lua"			type="client" />	
+	<script src="systems/shops/shop-supermarket_client.lua"		type="client" />	
+	<script src="systems/shops/shop-supermarket_server.lua"		type="server" />
+	<script src="systems/shops/shop-tanke_server.lua"			type="server" />
+	<script src="systems/shops/shop-tanke_client.lua"			type="client" />	
+	<script src="systems/shops/shop-ammunation_client.lua"		type="client" />	
+	<script src="systems/shops/shop-ammunation_server.lua"		type="server" />
+	<script src="systems/shops/shop-cluckin_server.lua"			type="server" />
+	<script src="systems/shops/shop-cluckin_client.lua"			type="client" />	
+	<script src="systems/shops/shop-clothes_server.lua"			type="server" />
+	<script src="systems/shops/shop-clothes_client.lua"			type="client" />	
+	<script src="systems/shops/shop-sex_server.lua"				type="server" />
+	<script src="systems/shops/shop-sex_client.lua"				type="client" />	
+	<script src="systems/shops/shop-stripbar_server.lua"		type="server" />
+	<script src="systems/shops/shop-stripbar_client.lua"		type="client" />	
+	<script src="systems/shops/shop-donut_server.lua"			type="server" />
+	<script src="systems/shops/shop-donut_client.lua"			type="client" />
+	<script src="systems/shops/vending.lua"							type="server" />
+	
+	<script src="systems/vehicle/server.lua"					type="server" />
+	<script src="systems/vehicle/vehcmd.lua"					type="server" />
+	<script src="systems/vehicle/motor_licht.lua"				type="server" />
+	<script src="systems/vehicle/client.lua"					type="client" />	
+	<script src="systems/vehicle/petrol_station/both.lua"		type="shared" />
+	<script src="systems/vehicle/petrol_station/server.lua"		type="server" />
+	<script src="systems/vehicle/petrol_station/client.lua"		type="client" />	
+	<script src="systems/vehicle/tuning/both.lua"				type="shared" />
+	<script src="systems/vehicle/tuning/neon_client.lua"		type="client" />	
+	<script src="systems/vehicle/tuning/neon_server.lua"		type="server" />
+	<script src="systems/vehicle/tuning/client.lua"				type="client" />	
+	<script src="systems/vehicle/tuning/cpaintjob_client.lua"	type="client" />	
+	<script src="systems/vehicle/tuning/server.lua"				type="server" />
+	<script src="systems/vehicle/carhouses/client.lua"			type="client" />	
+	<script src="systems/vehicle/carhouses/server.lua"			type="server" />
+	<script src="systems/vehicle/blitzer/client.lua"			type="client" />	
+	<script src="systems/vehicle/blitzer/server.lua"			type="server" />
+	
+	
+	
+	<!-- Server Core -->
+	<script src="core.lua"										type="server" />
+	
+	
+	
+	
+	
+	
+	
+	<!-- Files -->
+	<file src="files/fonts/chalet.ttf" />
+	<file src="files/fonts/digital.ttf" />
+	<file src="files/fonts/ds-digi.ttf" />
+	<file src="files/fonts/exo.ttf" />
+	<file src="files/fonts/exo-bold.ttf" />
+	<file src="files/fonts/harabara.ttf" />
+	<file src="files/fonts/righteous.ttf" />
+	<file src="files/fonts/neou-bold.ttf" />
+	<file src="files/fonts/ekmukta.ttf" />
+	<file src="files/fonts/ekmukta-bold.ttf" />
+	<file src="files/fonts/fontawesome.ttf" />
+	
+	
+	
+	<file src="files/html/js/jquery-2.1.3.min.js" />
+	<file src="files/html/js/jquery-ui.min.js" />
+	<file src="files/html/css/login.css" />
+	<file src="files/html/login.html" />
+	
+	<file src="files/html/iphone/css/framework7.ios.css"></file>
+	<file src="files/html/iphone/css/iphone.css"></file>
+	<file src="files/html/iphone/css/font-awesome.css"></file>
+	<file src="files/html/iphone/css/font-awesome-animation.min.css"></file>
+	<file src="files/html/iphone/css/fontawesome-webfont.woff"></file>
+	<file src="files/html/iphone/css/sanfrancisco_bold.woff"></file>
+	<file src="files/html/iphone/css/sanfrancisco_medium.woff"></file>
+	<file src="files/html/iphone/css/sanfrancisco_regular.woff"></file>
+	<file src="files/html/iphone/css/sanfrancisco_semibold.woff"></file>
+	<file src="files/html/iphone/css/sanfrancisco_thin.woff"></file>
+	<file src="files/html/iphone/css/sanfrancisco_ultralight.woff"></file>
+	<file src="files/html/iphone/js/jquery-3.0.0.min.js"></file>
+	<file src="files/html/iphone/js/framework7.min.js"></file>
+	<file src="files/html/iphone/js/iphone.js"></file>
+	<file src="files/html/iphone/js/usefull.js"></file>
+	<file src="files/html/iphone/js/Chart.js"></file>
+	<file src="files/html/iphone/js/apps/banking.js"></file>
+	<file src="files/html/iphone/js/apps/calculator.js"></file>
+	<file src="files/html/iphone/js/apps/home.js"></file>
+	<file src="files/html/iphone/js/apps/messages.js"></file>
+	<file src="files/html/iphone/js/apps/music.js"></file>
+	<file src="files/html/iphone/js/apps/phone.js"></file>
+	<file src="files/html/iphone/js/apps/settings.js"></file>
+	<file src="files/html/iphone/js/apps/weather.js"></file>
+	<file src="files/html/iphone/js/apps/vehicles.js"></file>
+	<file src="files/html/iphone/js/apps/franchise.js"></file>
+	
+	
+	<file src="files/html/iphone/images/appBgs/bankingSendBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/bankingTransactionsBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/calculatorBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/callBlurBg.jpg" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/findmycarBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/musicPlayerBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/musicPlayNowBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/musicRadioBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/musicSearchBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/musicTabBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/notesBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/phoneBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/phoneContactBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/safariBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/settingsBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/weatherBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/whiteBg.png" type="client"></file>
+	<file src="files/html/iphone/images/appBgs/emptyBattery.png" type="client"></file>
+	
+	<file src="files/html/iphone/images/apps/activity.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/appstore.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/banking.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/calculator.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/calender.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/camera.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/clock.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/compass.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/contacts.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/face_time.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/facebook.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/franchise.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/vehicles.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/health.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/home.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/itunes.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/mail.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/maps.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/messages.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/music.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/notes.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/phone.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/photos.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/reminders.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/safari.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/settings.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/stocks.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/tips.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/twitter.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/videos.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/weather.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/whatsapp.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/youtube.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/f1tv.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/skyline.png" type="client"></file>
+	<file src="files/html/iphone/images/apps/news.png" type="client"></file>
+	
+	<file src="files/html/iphone/images/ui/callIcon.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/flightmode_b.svg" type="client"></file>
+	<file src="files/html/iphone/images/ui/flightmode_w.svg" type="client"></file>
+	<file src="files/html/iphone/images/ui/locateIcon.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/pauseBtn.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/smsIcon.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/stopBtn.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/playBtn.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/cover.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/volume.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/flash_b.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/flash_w.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/accept.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/decline.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/sl_mobile.png" type="client"></file>
+	
+	<file src="files/html/iphone/images/ui/weather/01d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/02d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/03d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/04d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/09d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/10d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/11d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/13d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/50d.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/01n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/02n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/03n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/04n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/09n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/10n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/11n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/13n.png" type="client"></file>
+	<file src="files/html/iphone/images/ui/weather/50n.png" type="client"></file>
+	
+	
+	<file src="files/html/iphone/images/radio/default.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/antennebayern.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/bayern3.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/bigfm.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/blackbeatsfm.jpg" type="client"></file>
+	<file src="files/html/iphone/images/radio/breakzfm.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/einslive.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/einslivediggi.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/ffhtop40.jpg" type="client"></file>
+	<file src="files/html/iphone/images/radio/ffmrap.jpg" type="client"></file>
+	<file src="files/html/iphone/images/radio/hardbasefm.jpg" type="client"></file>
+	<file src="files/html/iphone/images/radio/hot108jamz.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/housetimefm.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradio.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradiobravocharts.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradiobravoparty.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradiodance.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradiomashup.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradiothebattle.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/iloveradiotubestars.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/radio7.jpg" type="client"></file>
+	<file src="files/html/iphone/images/radio/technobasefm.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/top100station.png" type="client"></file>
+	<file src="files/html/iphone/images/radio/youfm.png" type="client"></file>
+	
+	<file src="files/html/iphone/images/6s_bg.png" type="client"></file>
+	<file src="files/html/iphone/images/6s_Gold.png" type="client"></file>
+	<file src="files/html/iphone/images/6s_Rosegold.png" type="client"></file>
+	<file src="files/html/iphone/images/6s_Spacegrey.png" type="client"></file>
+	<file src="files/html/iphone/images/6s_Silber.png" type="client"></file>
+	<file src="files/html/iphone/images/sa_map.jpg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-calendar-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-calendar-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-comment-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-comment-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-email-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-email-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-gender-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-gender-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-name-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-name-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-password-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-password-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-settings-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-settings-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-tel-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-tel-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-toggle-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-toggle-material.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-url-ios.svg" type="client"></file>
+	<file src="files/html/iphone/images/i-form-url-material.svg" type="client"></file>
+	
+	<file src="files/html/iphone/sounds/notification.ogg"></file>
+	<file src="files/html/iphone/sounds/ringtone.ogg"></file>
+	<file src="files/html/iphone/sounds/busy.ogg"></file>
+	<file src="files/html/iphone/sounds/no_connection.ogg"></file>
+	<file src="files/html/iphone/sounds/wait_character.ogg"></file>
+	<file src="files/html/iphone/sounds/tw0.ogg"></file>
+	<file src="files/html/iphone/sounds/tw1.ogg"></file>
+	<file src="files/html/iphone/sounds/tw2.ogg"></file>
+	<file src="files/html/iphone/sounds/tw3.ogg"></file>
+	<file src="files/html/iphone/sounds/tw4.ogg"></file>
+	<file src="files/html/iphone/sounds/tw5.ogg"></file>
+	<file src="files/html/iphone/sounds/tw6.ogg"></file>
+	<file src="files/html/iphone/sounds/tw7.ogg"></file>
+	<file src="files/html/iphone/sounds/tw8.ogg"></file>
+	<file src="files/html/iphone/sounds/tw9.ogg"></file>
+	<file src="files/html/iphone/sounds/tws.ogg"></file>
+	<file src="files/html/iphone/sounds/twr.ogg"></file>	
+	
+	<file src="files/html/iphone/iphone.html"></file>
+	
+	
+	
+	<file src="files/images/logo.png" />
+	<file src="files/images/banner.png" />
+	<file src="files/images/cursor.png" />
+	<file src="files/images/map.png" />
+	<file src="files/images/gui_background.png" />
+	
+	<file src="files/images/atm/transfer.png" />
+	<file src="files/images/atm/banklogo.png" />
+	<file src="files/images/atm/banner.png" />
+	<file src="files/images/atm/auszug.png" />
+	
+	<file src="files/images/blips/0.png" />
+	<file src="files/images/blips/1.png" />
+	<file src="files/images/blips/2.png" />
+	<file src="files/images/blips/3.png" />
+	<file src="files/images/blips/4.png" />
+	<file src="files/images/blips/5.png" />
+	<file src="files/images/blips/6.png" />
+	<file src="files/images/blips/7.png" />
+	<file src="files/images/blips/8.png" />
+	<file src="files/images/blips/9.png" />
+	<file src="files/images/blips/10.png" />
+	<file src="files/images/blips/11.png" />
+	<file src="files/images/blips/12.png" />
+	<file src="files/images/blips/13.png" />
+	<file src="files/images/blips/14.png" />
+	<file src="files/images/blips/15.png" />
+	<file src="files/images/blips/16.png" />
+	<file src="files/images/blips/17.png" />
+	<file src="files/images/blips/18.png" />
+	<file src="files/images/blips/19.png" />
+	<file src="files/images/blips/20.png" />
+	<file src="files/images/blips/21.png" />
+	<file src="files/images/blips/22.png" />
+	<file src="files/images/blips/23.png" />
+	<file src="files/images/blips/24.png" />
+	<file src="files/images/blips/25.png" />
+	<file src="files/images/blips/26.png" />
+	<file src="files/images/blips/27.png" />
+	<file src="files/images/blips/28.png" />
+	<file src="files/images/blips/29.png" />
+	<file src="files/images/blips/30.png" />
+	<file src="files/images/blips/31.png" />
+	<file src="files/images/blips/32.png" />
+	<file src="files/images/blips/33.png" />
+	<file src="files/images/blips/34.png" />
+	<file src="files/images/blips/35.png" />
+	<file src="files/images/blips/36.png" />
+	<file src="files/images/blips/37.png" />
+	<file src="files/images/blips/38.png" />
+	<file src="files/images/blips/39.png" />
+	<file src="files/images/blips/40.png" />
+	<file src="files/images/blips/41.png" />
+	<file src="files/images/blips/42.png" />
+	<file src="files/images/blips/43.png" />
+	<file src="files/images/blips/44.png" />
+	<file src="files/images/blips/45.png" />
+	<file src="files/images/blips/46.png" />
+	<file src="files/images/blips/47.png" />
+	<file src="files/images/blips/48.png" />
+	<file src="files/images/blips/49.png" />
+	<file src="files/images/blips/50.png" />
+	<file src="files/images/blips/51.png" />
+	<file src="files/images/blips/52.png" />
+	<file src="files/images/blips/53.png" />
+	<file src="files/images/blips/54.png" />
+	<file src="files/images/blips/55.png" />
+	<file src="files/images/blips/56.png" />
+	<file src="files/images/blips/57.png" />
+	<file src="files/images/blips/58.png" />
+	<file src="files/images/blips/59.png" />
+	<file src="files/images/blips/60.png" />
+	<file src="files/images/blips/61.png" />
+	<file src="files/images/blips/62.png" />
+	<file src="files/images/blips/63.png" />
+	
+	<file src="files/images/colors/c_black.png" />
+	<file src="files/images/colors/c_blue.jpg" />
+	<file src="files/images/colors/c_green.jpg" />
+	<file src="files/images/colors/c_grey.jpg" />
+	<file src="files/images/colors/c_lblue.jpg" />
+	<file src="files/images/colors/c_red.png" />
+	<file src="files/images/colors/c_white.png" />
+	<file src="files/images/colors/c_yellow.jpg" />
+	<file src="files/images/colors/skylineblue.png" />
+	<file src="files/images/colors/transparent.png" />
+	
+	
+	<file src="files/images/dxgui/white.png" />
+	<file src="files/images/dxgui/activeselector.png" />
+	<file src="files/images/dxgui/button.png" />
+	<file src="files/images/dxgui/button_round.png" />
+	<file src="files/images/dxgui/checkbox.png" />
+	<file src="files/images/dxgui/checkboxactive.png" />
+	<file src="files/images/dxgui/container.png" />
+	<file src="files/images/dxgui/item.png" />
+	<file src="files/images/dxgui/window.png" />
+	<file src="files/images/dxgui/success.png" />
+	<file src="files/images/dxgui/tab.png" />
+	<file src="files/images/dxgui/tab-hover.png" />
+	<file src="files/images/dxgui/tabbg.png" />
+	
+	<file src="files/images/house/house.png" />
+	
+	<file src="files/images/inventory/hover.png" />
+	<file src="files/images/inventory/box.png" />
+	<file src="files/images/inventory/food.png" />
+	<file src="files/images/inventory/portemonnaie.png" />
+	<file src="files/images/inventory/rucksack.png" />
+	
+	
+	<file src="files/images/jobs/gabelstaplerfahrer.png" />
+	
+	<file src="files/images/mouse/mouse.png" />
+	<file src="files/images/mouse/left_mouse.png" />
+	<file src="files/images/mouse/middle_mouse.png" />
+	<file src="files/images/mouse/right_mouse.png" />
+	
+	<file src="files/images/nametag/team.png" />
+	<file src="files/images/nametag/afk.png" />
+	<file src="files/images/nametag/armour.png" />
+	
+	<file src="files/images/notification/error.png" />
+	<file src="files/images/notification/info.png" />
+	<file src="files/images/notification/success.png" />
+	<file src="files/images/notification/warning.png" />
+	<file src="files/images/notification/radio2.png" />
+	
+	<file src="files/images/productlist/truck_terminal.png" />
+	<file src="files/images/productlist/grotti.png" />
+	<file src="files/images/productlist/autobahn.png" />
+	<file src="files/images/productlist/ottos.png" />
+	<file src="files/images/productlist/wang.png" />
+	<file src="files/images/productlist/shody.png" />
+	<file src="files/images/productlist/coutt.png" />
+	<file src="files/images/productlist/boat.png" />
+	<file src="files/images/productlist/ammunation.png" />
+	<file src="files/images/productlist/cluckin_bell.png" />
+	<file src="files/images/productlist/pizza.png" />
+	<file src="files/images/productlist/burgershot.png" />
+	<file src="files/images/productlist/donut.png" />
+	<file src="files/images/productlist/24-7.png" />
+	<file src="files/images/productlist/xxx.png" />
+	<file src="files/images/productlist/zip.png" />
+	<file src="files/images/productlist/binco.png" />
+	<file src="files/images/productlist/suburban.png" />
+	<file src="files/images/productlist/victim.png" />
+	<file src="files/images/productlist/prolaps.png" />
+	<file src="files/images/productlist/didiersachs.png" />
+	<file src="files/images/productlist/skykea.png" />
+	<file src="files/images/productlist/bar.png" />
+	<file src="files/images/productlist/strip.png" />
+	
+	<file src="files/images/franchise/franchise.png" />
+	
+	
+	<file src="files/images/skins/0.png" />
+	<file src="files/images/skins/1.png" />
+	<file src="files/images/skins/2.png" />
+	<file src="files/images/skins/3.png" />
+	<file src="files/images/skins/4.png" />
+	<file src="files/images/skins/5.png" />
+	<file src="files/images/skins/6.png" />
+	<file src="files/images/skins/7.png" />
+	<file src="files/images/skins/8.png" />
+	<file src="files/images/skins/9.png" />
+	<file src="files/images/skins/10.png" />
+	<file src="files/images/skins/11.png" />
+	<file src="files/images/skins/12.png" />
+	<file src="files/images/skins/13.png" />
+	<file src="files/images/skins/14.png" />
+	<file src="files/images/skins/15.png" />
+	<file src="files/images/skins/16.png" />
+	<file src="files/images/skins/17.png" />
+	<file src="files/images/skins/18.png" />
+	<file src="files/images/skins/19.png" />
+	<file src="files/images/skins/20.png" />
+	<file src="files/images/skins/21.png" />
+	<file src="files/images/skins/22.png" />
+	<file src="files/images/skins/23.png" />
+	<file src="files/images/skins/24.png" />
+	<file src="files/images/skins/25.png" />
+	<!-- MISSING: 26 -->
+	<file src="files/images/skins/27.png" />
+	<file src="files/images/skins/28.png" />
+	<file src="files/images/skins/29.png" />
+	<file src="files/images/skins/30.png" />
+	<file src="files/images/skins/31.png" />
+	<file src="files/images/skins/32.png" />
+	<file src="files/images/skins/33.png" />
+	<file src="files/images/skins/34.png" />
+	<file src="files/images/skins/35.png" />
+	<file src="files/images/skins/36.png" />
+	<file src="files/images/skins/37.png" />
+	<file src="files/images/skins/38.png" />
+	<file src="files/images/skins/39.png" />
+	<file src="files/images/skins/40.png" />
+	<file src="files/images/skins/41.png" />
+	<file src="files/images/skins/43.png" />
+	<file src="files/images/skins/44.png" />
+	<file src="files/images/skins/45.png" />
+	<file src="files/images/skins/46.png" />
+	<file src="files/images/skins/47.png" />
+	<file src="files/images/skins/48.png" />
+	<file src="files/images/skins/49.png" />
+	<file src="files/images/skins/50.png" />
+	<file src="files/images/skins/51.png" />
+	<file src="files/images/skins/52.png" />
+	<file src="files/images/skins/53.png" />
+	<file src="files/images/skins/54.png" />
+	<file src="files/images/skins/55.png" />
+	<file src="files/images/skins/56.png" />
+	<file src="files/images/skins/57.png" />
+	<file src="files/images/skins/58.png" />
+	<file src="files/images/skins/59.png" />
+	<file src="files/images/skins/60.png" />
+	<file src="files/images/skins/61.png" />
+	<file src="files/images/skins/62.png" />
+	<file src="files/images/skins/63.png" />
+	<file src="files/images/skins/64.png" />
+	<file src="files/images/skins/66.png" />
+	<file src="files/images/skins/67.png" />
+	<file src="files/images/skins/68.png" />
+	<file src="files/images/skins/69.png" />
+	<file src="files/images/skins/70.png" />
+	<file src="files/images/skins/71.png" />
+	<file src="files/images/skins/72.png" />
+	<file src="files/images/skins/73.png" />
+	<!-- MISSING: 75 -->
+	<file src="files/images/skins/76.png" />
+	<file src="files/images/skins/77.png" />
+	<file src="files/images/skins/78.png" />
+	<file src="files/images/skins/79.png" />
+	<file src="files/images/skins/80.png" />
+	<file src="files/images/skins/81.png" />
+	<file src="files/images/skins/82.png" />
+	<file src="files/images/skins/83.png" />
+	<file src="files/images/skins/84.png" />
+	<file src="files/images/skins/85.png" />
+	<file src="files/images/skins/87.png" />
+	<file src="files/images/skins/88.png" />
+	<file src="files/images/skins/89.png" />
+	<file src="files/images/skins/90.png" />
+	<file src="files/images/skins/91.png" />
+	<file src="files/images/skins/92.png" />
+	<file src="files/images/skins/93.png" />
+	<file src="files/images/skins/94.png" />
+	<file src="files/images/skins/95.png" />
+	<file src="files/images/skins/96.png" />
+	<file src="files/images/skins/97.png" />
+	<file src="files/images/skins/98.png" />
+	<file src="files/images/skins/99.png" />
+	<file src="files/images/skins/100.png" />
+	<file src="files/images/skins/101.png" />
+	<file src="files/images/skins/102.png" />
+	<file src="files/images/skins/103.png" />
+	<file src="files/images/skins/104.png" />
+	<file src="files/images/skins/105.png" />
+	<file src="files/images/skins/106.png" />
+	<file src="files/images/skins/107.png" />
+	<file src="files/images/skins/108.png" />
+	<file src="files/images/skins/109.png" />
+	<file src="files/images/skins/110.png" />
+	<file src="files/images/skins/111.png" />
+	<file src="files/images/skins/112.png" />
+	<file src="files/images/skins/113.png" />
+	<file src="files/images/skins/114.png" />
+	<file src="files/images/skins/115.png" />
+	<file src="files/images/skins/116.png" />
+	<file src="files/images/skins/117.png" />
+	<file src="files/images/skins/118.png" />
+	<file src="files/images/skins/120.png" />
+	<file src="files/images/skins/121.png" />
+	<file src="files/images/skins/122.png" />
+	<file src="files/images/skins/123.png" />
+	<file src="files/images/skins/124.png" />
+	<file src="files/images/skins/125.png" />
+	<file src="files/images/skins/126.png" />
+	<file src="files/images/skins/127.png" />
+	<file src="files/images/skins/128.png" />
+	<file src="files/images/skins/129.png" />
+	<file src="files/images/skins/130.png" />
+	<file src="files/images/skins/131.png" />
+	<file src="files/images/skins/132.png" />
+	<file src="files/images/skins/133.png" />
+	<file src="files/images/skins/134.png" />
+	<file src="files/images/skins/135.png" />
+	<file src="files/images/skins/136.png" />
+	<file src="files/images/skins/137.png" />
+	<file src="files/images/skins/138.png" />
+	<file src="files/images/skins/139.png" />
+	<file src="files/images/skins/140.png" />
+	<file src="files/images/skins/141.png" />
+	<file src="files/images/skins/142.png" />
+	<file src="files/images/skins/143.png" />
+	<file src="files/images/skins/144.png" />
+	<file src="files/images/skins/145.png" />
+	<file src="files/images/skins/146.png" />
+	<file src="files/images/skins/147.png" />
+	<file src="files/images/skins/148.png" />
+	<file src="files/images/skins/150.png" />
+	<file src="files/images/skins/151.png" />
+	<file src="files/images/skins/152.png" />
+	<file src="files/images/skins/153.png" />
+	<file src="files/images/skins/154.png" />
+	<file src="files/images/skins/155.png" />
+	<file src="files/images/skins/156.png" />
+	<file src="files/images/skins/157.png" />
+	<file src="files/images/skins/158.png" />
+	<file src="files/images/skins/159.png" />
+	<file src="files/images/skins/160.png" />
+	<file src="files/images/skins/161.png" />
+	<file src="files/images/skins/162.png" />
+	<file src="files/images/skins/163.png" />
+	<file src="files/images/skins/164.png" />
+	<file src="files/images/skins/165.png" />
+	<file src="files/images/skins/166.png" />
+	<file src="files/images/skins/167.png" />
+	<file src="files/images/skins/168.png" />
+	<file src="files/images/skins/169.png" />
+	<file src="files/images/skins/170.png" />
+	<file src="files/images/skins/171.png" />
+	<file src="files/images/skins/172.png" />
+	<file src="files/images/skins/173.png" />
+	<file src="files/images/skins/174.png" />
+	<file src="files/images/skins/175.png" />
+	<file src="files/images/skins/176.png" />
+	<file src="files/images/skins/177.png" />
+	<file src="files/images/skins/178.png" />
+	<file src="files/images/skins/179.png" />
+	<file src="files/images/skins/180.png" />
+	<file src="files/images/skins/181.png" />
+	<file src="files/images/skins/182.png" />
+	<file src="files/images/skins/183.png" />
+	<file src="files/images/skins/184.png" />
+	<file src="files/images/skins/185.png" />
+	<file src="files/images/skins/186.png" />
+	<file src="files/images/skins/187.png" />
+	<file src="files/images/skins/188.png" />
+	<file src="files/images/skins/189.png" />
+	<file src="files/images/skins/190.png" />
+	<file src="files/images/skins/191.png" />
+	<file src="files/images/skins/192.png" />
+	<file src="files/images/skins/193.png" />
+	<file src="files/images/skins/194.png" />
+	<file src="files/images/skins/195.png" />
+	<file src="files/images/skins/196.png" />
+	<file src="files/images/skins/197.png" />
+	<file src="files/images/skins/198.png" />
+	<file src="files/images/skins/199.png" />
+	<file src="files/images/skins/200.png" />
+	<file src="files/images/skins/201.png" />
+	<file src="files/images/skins/202.png" />
+	<file src="files/images/skins/203.png" />
+	<file src="files/images/skins/204.png" />
+	<file src="files/images/skins/205.png" />
+	<file src="files/images/skins/206.png" />
+	<file src="files/images/skins/207.png" />
+	<file src="files/images/skins/209.png" />
+	<file src="files/images/skins/210.png" />
+	<file src="files/images/skins/211.png" />
+	<file src="files/images/skins/212.png" />
+	<file src="files/images/skins/213.png" />
+	<file src="files/images/skins/214.png" />
+	<file src="files/images/skins/215.png" />
+	<file src="files/images/skins/216.png" />
+	<file src="files/images/skins/217.png" />
+	<file src="files/images/skins/218.png" />
+	<file src="files/images/skins/219.png" />
+	<file src="files/images/skins/220.png" />
+	<file src="files/images/skins/221.png" />
+	<file src="files/images/skins/222.png" />
+	<file src="files/images/skins/223.png" />
+	<file src="files/images/skins/224.png" />
+	<file src="files/images/skins/225.png" />
+	<file src="files/images/skins/226.png" />
+	<file src="files/images/skins/227.png" />
+	<file src="files/images/skins/228.png" />
+	<file src="files/images/skins/229.png" />
+	<file src="files/images/skins/230.png" />
+	<file src="files/images/skins/231.png" />
+	<file src="files/images/skins/232.png" />
+	<file src="files/images/skins/233.png" />
+	<file src="files/images/skins/234.png" />
+	<file src="files/images/skins/235.png" />
+	<file src="files/images/skins/236.png" />
+	<file src="files/images/skins/237.png" />
+	<file src="files/images/skins/238.png" />
+	<file src="files/images/skins/239.png" />
+	<file src="files/images/skins/240.png" />
+	<file src="files/images/skins/241.png" />
+	<file src="files/images/skins/242.png" />
+	<file src="files/images/skins/243.png" />
+	<file src="files/images/skins/244.png" />
+	<file src="files/images/skins/245.png" />
+	<file src="files/images/skins/246.png" />
+	<file src="files/images/skins/247.png" />
+	<file src="files/images/skins/248.png" />
+	<file src="files/images/skins/249.png" />
+	<file src="files/images/skins/250.png" />
+	<file src="files/images/skins/251.png" />
+	<file src="files/images/skins/252.png" />
+	<file src="files/images/skins/253.png" />
+	<file src="files/images/skins/254.png" />
+	<file src="files/images/skins/255.png" />
+	<file src="files/images/skins/256.png" />
+	<file src="files/images/skins/257.png" />
+	<file src="files/images/skins/258.png" />
+	<file src="files/images/skins/259.png" />
+	<file src="files/images/skins/260.png" />
+	<file src="files/images/skins/261.png" />
+	<file src="files/images/skins/262.png" />
+	<file src="files/images/skins/263.png" />
+	<file src="files/images/skins/264.png" />
+	<!-- MISSING: 265 -->
+	<!-- MISSING: 266 -->
+	<!-- MISSING: 267 -->
+	<!-- MISSING: 268 -->
+	<!-- MISSING: 269 -->
+	<!-- MISSING: 270 -->
+	<!-- MISSING: 271 -->
+	<!-- MISSING: 272 -->
+	<file src="files/images/skins/274.png" />
+	<file src="files/images/skins/275.png" />
+	<file src="files/images/skins/276.png" />
+	<file src="files/images/skins/277.png" />
+	<file src="files/images/skins/278.png" />
+	<file src="files/images/skins/279.png" />
+	<file src="files/images/skins/280.png" />
+	<file src="files/images/skins/281.png" />
+	<file src="files/images/skins/282.png" />
+	<file src="files/images/skins/283.png" />
+	<file src="files/images/skins/284.png" />
+	<file src="files/images/skins/285.png" />
+	<file src="files/images/skins/286.png" />
+	<file src="files/images/skins/287.png" />
+	<file src="files/images/skins/288.png" />
+	<!-- MISSING: 290 -->
+	<!-- MISSING: 291 -->
+	<!-- MISSING: 292 -->
+	<!-- MISSING: 293 -->
+	<!-- MISSING: 294 -->
+	<!-- MISSING: 295 -->
+	<!-- MISSING: 296 -->
+	<!-- MISSING: 297 -->
+	<!-- MISSING: 298 -->
+	<!-- MISSING: 299 -->
+	<!-- MISSING: 300 -->
+	<!-- MISSING: 301 -->
+	<!-- MISSING: 302 -->
+	<!-- MISSING: 303 -->
+	<!-- MISSING: 304 -->
+	<!-- MISSING: 305 -->
+	<!-- MISSING: 306 -->
+	<!-- MISSING: 307 -->
+	<!-- MISSING: 308 -->
+	<!-- MISSING: 309 -->
+	<!-- MISSING: 310 -->
+	<!-- MISSING: 311 -->
+	<!-- MISSING: 312 -->
+	
+	
+	<file src="files/images/supermarket/camera.png" />
+	<file src="files/images/supermarket/camerafilm.png" />
+	<file src="files/images/supermarket/firstaid.png" />
+	<file src="files/images/supermarket/flowers.png" />
+	<file src="files/images/supermarket/beer.png" />
+	<file src="files/images/supermarket/wodka.png" />
+	<file src="files/images/supermarket/cigarettes.png" />
+	<file src="files/images/supermarket/prepaidcredit.png" />
+	<file src="files/images/supermarket/dice.png" />
+	<file src="files/images/supermarket/scratchcard.png" />
+	<file src="files/images/supermarket/coffee.png" />
+	<file src="files/images/supermarket/sprunk.png" />
+	<file src="files/images/supermarket/kanister.png" />
+	<file src="files/images/supermarket/news.png" />
+	<file src="files/images/supermarket/schoko.png" />
+	<file src="files/images/supermarket/toolbox.png" />
+	
+	<file src="files/images/tuning/arrow_down.png" />
+	<file src="files/images/tuning/arrow_up.png" />
+	<file src="files/images/tuning/nav.png" />
+	<file src="files/images/tuning/rowhover.png" />
+	<file src="files/images/tuning/light.png" />
+	<file src="files/images/tuning/palette.png" />
+	<file src="files/images/tuning/legende.png" />
+	<file src="files/images/tuning/installed.png" />
+	<file src="files/images/tuning/sl-performance.png" />
+	<file src="files/images/tuning/lights/1.png" />
+	<file src="files/images/tuning/lights/2.png" />
+	<file src="files/images/tuning/lights/3.png" />
+	<file src="files/images/tuning/lights/4.png" />
+	<file src="files/images/tuning/lights/5.png" />
+	<file src="files/images/tuning/lights/6.png" />
+	<file src="files/images/tuning/lights/7.png" />
+	<file src="files/images/tuning/lights/8.png" />
+	<file src="files/images/tuning/lights/9.png" />
+	<file src="files/images/tuning/lights/10.png" />
+	<file src="files/images/tuning/lights/11.png" />
+	<file src="files/images/tuning/lights/12.png" />
+	<file src="files/images/tuning/lights/13.png" />
+	<file src="files/images/tuning/lights/14.png" />
+	<file src="files/images/tuning/lights/15.png" />
+	<file src="files/images/tuning/lights/16.png" />
+	<file src="files/images/tuning/lights/17.png" />
+	<file src="files/images/tuning/lights/18.png" />
+	<file src="files/images/tuning/lights/19.png" />
+	<file src="files/images/tuning/lights/20.png" />
+	<file src="files/images/tuning/lights/21.png" />
+	<file src="files/images/tuning/lights/22.png" />
+	<file src="files/images/tuning/lights/23.png" />
+	<file src="files/images/tuning/lights/24.png" />
+	<file src="files/images/tuning/lights/25.png" />
+	<file src="files/images/tuning/lights/26.png" />
+	<file src="files/images/tuning/lights/27.png" />
+	<file src="files/images/tuning/cpaintjobs/Camo.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Carbo.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Cobra.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Hipster.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Nexus.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Rusty.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Space.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Sticker.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Weed.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Wood.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Crimson.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Lightning.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Rainbow.jpg" />
+	<file src="files/images/tuning/cpaintjobs/Franzi.jpg"  />
+	<file src="files/images/tuning/cpaintjobs/Lars.jpg" />
+	
+	
+	<!-- Slot 0: No Weapon -->
+	<file src="files/images/weapons/0.png" />
+	<file src="files/images/weapons/1.png" />
+	<!-- Slot 1: Melee -->
+	<file src="files/images/weapons/2.png" />
+	<file src="files/images/weapons/3.png" />
+	<file src="files/images/weapons/4.png" />
+	<file src="files/images/weapons/5.png" />
+	<file src="files/images/weapons/6.png" />
+	<file src="files/images/weapons/7.png" />
+	<file src="files/images/weapons/8.png" />
+	<file src="files/images/weapons/9.png" />
+	<!-- Slot 2: Handguns -->
+	<file src="files/images/weapons/22.png" />
+	<file src="files/images/weapons/23.png" />
+	<file src="files/images/weapons/24.png" />
+	<!-- Slot 3: Shotguns -->
+	<file src="files/images/weapons/25.png" />
+	<file src="files/images/weapons/26.png" />
+	<file src="files/images/weapons/27.png" />
+	<!-- Slot 4: Sub-Machine Guns -->
+	<file src="files/images/weapons/28.png" />
+	<file src="files/images/weapons/29.png" />
+	<file src="files/images/weapons/32.png" />
+	<!-- Slot 5: Assault Rifles-->
+	<file src="files/images/weapons/30.png" />
+	<file src="files/images/weapons/31.png" />
+	<!-- Slot 6: Rifles -->
+	<file src="files/images/weapons/33.png" />
+	<file src="files/images/weapons/34.png" />
+	<!-- Slot 7: Heavy Weapons -->
+	<file src="files/images/weapons/35.png" />
+	<file src="files/images/weapons/36.png" />
+	<file src="files/images/weapons/37.png" />
+	<file src="files/images/weapons/38.png" />
+	<!-- Slot 8: Projectiles -->
+	<file src="files/images/weapons/16.png" />
+	<file src="files/images/weapons/17.png" />
+	<file src="files/images/weapons/18.png" />
+	<file src="files/images/weapons/39.png" />
+	<!-- Slot 9: Special 1 -->
+	<file src="files/images/weapons/41.png" />
+	<file src="files/images/weapons/42.png" />
+	<file src="files/images/weapons/43.png" />
+	<!-- Slot 10: Gifts/Other -->
+	<file src="files/images/weapons/10.png" />
+	<file src="files/images/weapons/11.png" />
+	<file src="files/images/weapons/12.png" />
+	<file src="files/images/weapons/14.png" />
+	<file src="files/images/weapons/15.png" />
+	<!-- Slot 11: Special 2 -->
+	<file src="files/images/weapons/44.png" />
+	<file src="files/images/weapons/45.png" />
+	<file src="files/images/weapons/46.png" />
+	<!-- Slot 12: Satchel Detonator -->
+	<file src="files/images/weapons/40.png" />
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="files/maps/mapfix.lua" type="server" />
+	<script src="files/maps/mapEditorScriptingExtension_s.lua" type="server" />
+    <script src="files/maps/mapEditorScriptingExtension_c.lua" type="client" validate="false" />
+	<map	src="files/maps/bankinterior.map" />
+	<map	src="files/maps/gta5bank.map" />
+	<map	src="files/maps/bank_tunnel.map" />
+	<map	src="files/maps/tankstellen.map" />
+	<!--<map	src="files/maps/tuning.map" />-->
+	<!--<map	src="files/maps/couttschutz.map" />-->
+	<map	src="files/maps/autobahn_grotti.map" />
+	<map	src="files/maps/hafen.map" />
+	<map	src="files/maps/stadthalle.map" />
+	<map	src="files/maps/stadtpark.map" />
+	<map	src="files/maps/truck_terminal.map" />
+	<map	src="files/maps/wang_cars.map" />
+	<map	src="files/maps/schwimmbad.map" />
+	<map	src="files/maps/moebelhausint.map" />
+	<map	src="files/maps/skykea.map" />
+	<map	src="files/maps/mall.map" />
+	
+	
+	
+	<file src="files/sounds/bank_alarm.mp3" />
+	<file src="files/sounds/carlock.mp3" />
+	<file src="files/sounds/motor_start.mp3" />
+	<file src="files/sounds/motor_stop.mp3" />
+	<file src="files/sounds/refuel.mp3" />
+	<file src="files/sounds/notification.mp3" />
+	<file src="files/sounds/moneychange.wav" />
+	<file src="files/sounds/handbrake_up.mp3" />
+	<file src="files/sounds/handbrake_down.mp3" />
+	<file src="files/sounds/elevatorBing.mp3" />
+	
+	<file src="files/sounds/horns/badum_tss.mp3" />
+	<file src="files/sounds/horns/boing.mp3" />
+	<file src="files/sounds/horns/car_horn.mp3" />
+	<file src="files/sounds/horns/car_horn_2.mp3" />
+	<file src="files/sounds/horns/cha_ching.mp3" />
+	<file src="files/sounds/horns/fanfare.mp3" />
+	<file src="files/sounds/horns/general_lee.mp3" />
+	<file src="files/sounds/horns/ice_cream.mp3" />
+	<file src="files/sounds/horns/ice_cream_2.mp3" />
+	<file src="files/sounds/horns/la_cucaracha.mp3" />
+	<file src="files/sounds/horns/truck.mp3" />
+	<file src="files/sounds/horns/lastkraftwagenfahrer.mp3" />
+	
+	
+	
+	
+	
+	
+	<file src="files/textures/ammunation_wallfix.txd" />
+	<file src="files/textures/supermarket_1.txd" />
+	<file src="files/textures/supermarket_2.txd" />
+	<file src="files/textures/supermarket_3.txd" />
+	<file src="files/textures/burg_1.txd" />
+	<file src="files/textures/cemetery.txd" />
+	<file src="files/textures/jeffers5a_lae.txd" />
+	<file src="files/textures/laeJeffers02.col" />
+	<file src="files/textures/sunset02_law2.txd" />
+	<file src="files/textures/vegasNbank1ug.col" />
+	<file src="files/textures/bustopm.txd" />
+	<file src="files/textures/stopper.txd" />
+	<file src="files/textures/stopper.dff" />
+	<file src="files/textures/stopper.col" />
+	<file src="files/textures/glenpark7_lae.txd" />
+	<file src="files/textures/RopeBridge.txd" />
+	<file src="files/textures/RopeBridgePart1.dff" />
+	<file src="files/textures/RopeBridgePart1.col" />
+	<file src="files/textures/RopeBridgePart2.dff" />
+	<file src="files/textures/RopeBridgePart2.col" />
+	<file src="files/textures/skykea.txd" />
+	<file src="files/textures/cigarette.txd" />
+	<file src="files/textures/cigarette.dff" />
+	<file src="files/textures/CigaretteMachine.txd" />
+	<file src="files/textures/CigaretteMachine.dff" />
+	<file src="files/textures/CigaretteMachine.col" />
+	<file src="files/textures/mallb_laW02.dff" />
+	<file src="files/textures/mallb_laW02.col" />
+	<file src="files/textures/mallb_laW02.txd" />
+	<file src="files/textures/lsmall_shop01.dff" />
+	<file src="files/textures/lsmall_shop01.col" />
+	<file src="files/textures/lsmall_shop01.txd" />
+	<file src="files/textures/libertyhi.txd" />
+	<file src="files/textures/snowover01.dff" />
+	<file src="files/textures/imrancomp1_las2.dff" />
+	<file src="files/textures/imrancomp1_las2.col" />
+	<file src="files/textures/imracompint_las2.dff" />
+	<file src="files/textures/imracompint_las2.col" />
+	<file src="files/textures/imcomp1trk.dff" />
+	<file src="files/textures/imcomp1trk.col" />
+	
+	
+	<file src="files/textures/gta5/bank/bank.txd" />
+	<file src="files/textures/gta5/bank/bank.dff" />
+	<file src="files/textures/gta5/bank/bank.col" />
+	<file src="files/textures/gta5/bank/hei_obankb_counter1.dff" />
+	<file src="files/textures/gta5/bank/hei_obankb_counter1.col" />
+	<file src="files/textures/gta5/bank/hei_obankbbalistrade1.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbbalistrade1.col" />
+	<file src="files/textures/gta5/bank/hei_obankbbalistrade2.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbbalistrade2.col" />
+	<file src="files/textures/gta5/bank/hei_obankbbanister03.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbbanister03.col" />
+	<file src="files/textures/gta5/bank/hei_obankbbanister1.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbbanister1.col" />
+	<file src="files/textures/gta5/bank/hei_obankbfurniture.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbfurniture.col" />
+	<file src="files/textures/gta5/bank/hei_obankborntelamp2.dff" />
+	<file src="files/textures/gta5/bank/hei_obankborntelamp2.col" />
+	<file src="files/textures/gta5/bank/hei_obankborntelamp3.dff" />
+	<file src="files/textures/gta5/bank/hei_obankborntelamp3.col" />
+	<file src="files/textures/gta5/bank/hei_obankborntelamp4.dff" />
+	<file src="files/textures/gta5/bank/hei_obankborntelamp4.col" />
+	<file src="files/textures/gta5/bank/hei_obankbsafeframe.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbsafeframe.col" />
+	<file src="files/textures/gta5/bank/hei_obankbstairs2.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbstairs2.col" />
+	<file src="files/textures/gta5/bank/hei_obankb_arch.dff" />
+	<file src="files/textures/gta5/bank/hei_obankb_arch.col" />
+	<file src="files/textures/gta5/bank/hei_obankb_atm1.dff" />
+	<file src="files/textures/gta5/bank/hei_obankb_atm1.col" />
+	<file src="files/textures/gta5/bank/hei_obankb_cornice1.dff" />
+	<file src="files/textures/gta5/bank/hei_obankb_cornice1.col" />
+	<file src="files/textures/gta5/bank/hei_obankbsecurity.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbsecurity.col" />
+	<file src="files/textures/gta5/bank/hei_obankbsafebars.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbsafebars.col" />
+	<file src="files/textures/gta5/bank/hei_obankbankarches.dff" />
+	<file src="files/textures/gta5/bank/hei_obankbankarches.col" />
+	<file src="files/textures/gta5/bank/v_ilev_bk_vaultdoor.dff" />
+	<file src="files/textures/gta5/bank/v_ilev_bk_vaultdoor.col" />
+	<file src="files/textures/gta5/bank/prop_v_5_bclock.dff" />
+	<file src="files/textures/gta5/bank/prop_v_5_bclock.col" />
+	<file src="files/textures/gta5/bank/prop_atm_02.dff" />
+	<file src="files/textures/gta5/bank/prop_atm_02.col" />
+	<file src="files/textures/gta5/bank/prop_ld_balastrude.dff" />
+	<file src="files/textures/gta5/bank/prop_ld_balastrude.col" />
+	<file src="files/textures/gta5/bank/v_ilev_bk_gate2.dff" />
+	<file src="files/textures/gta5/bank/v_ilev_bk_gate2.col" />
+	<file src="files/textures/gta5/bank/apa_prop_hei_bankdoor_new.dff" />
+	<file src="files/textures/gta5/bank/apa_prop_hei_bankdoor_new.col" />
+	
+	
+	
+	<file src="files/textures/neon/neon.col" />
+	<file src="files/textures/neon/blue.dff" />
+	<file src="files/textures/neon/lightblue.dff" />
+	<file src="files/textures/neon/iceblue.dff" />
+	<file src="files/textures/neon/green.dff" />
+	<file src="files/textures/neon/pink.dff" />
+	<file src="files/textures/neon/red.dff" />
+	<file src="files/textures/neon/orange.dff" />
+	<file src="files/textures/neon/white.dff" />
+	<file src="files/textures/neon/yellow.dff" />
+	<file src="files/textures/neon/greenyellowred.dff" />
+	
+	<file src="files/textures/samp/all_walls.txd" />
+	<file src="files/textures/samp/gym_floor5.col" />
+	<file src="files/textures/samp/gym_floor5.dff" />
+	
+	<file src="files/textures/samp/Tube50mTSection1.txd" />
+	<file src="files/textures/samp/Tube50mTSection1.col" />
+	<file src="files/textures/samp/Tube50mTSection1.dff" />
+	
+	<file src="files/textures/samp/cs_ebridge.txd" />
+	<file src="files/textures/samp/Plane62_5x15Conc1.col" />
+	<file src="files/textures/samp/Plane62_5x15Conc1.dff" />
+	
+	<file src="files/textures/samp/grass.col" />
+	<file src="files/textures/samp/grass.dff" />
+	<file src="files/textures/samp/wall001.col" />
+	<file src="files/textures/samp/wall001.dff" />
+	<file src="files/textures/samp/wall002.col" />
+	<file src="files/textures/samp/wall002.dff" />
+	<file src="files/textures/samp/wall003.col" />
+	<file src="files/textures/samp/wall003.dff" />
+	<file src="files/textures/samp/wall006.col" />
+	<file src="files/textures/samp/wall006.dff" />
+	<file src="files/textures/samp/wall009.col" />
+	<file src="files/textures/samp/wall009.dff" />
+	<file src="files/textures/samp/wall010.col" />
+	<file src="files/textures/samp/wall010.dff" />
+	<file src="files/textures/samp/wall012.col" />
+	<file src="files/textures/samp/wall012.dff" />
+	<file src="files/textures/samp/wall023.col" />
+	<file src="files/textures/samp/wall023.dff" />
+	<file src="files/textures/samp/wall025.col" />
+	<file src="files/textures/samp/wall025.dff" />
+	<file src="files/textures/samp/wall025ori.txd" />
+	<file src="files/textures/samp/wall033.col" />
+	<file src="files/textures/samp/wall033.dff" />
+	<file src="files/textures/samp/wall035.col" />
+	<file src="files/textures/samp/wall035.dff" />
+	<file src="files/textures/samp/wall039.col" />
+	<file src="files/textures/samp/wall039.dff" />
+	<file src="files/textures/samp/wall041.col" />
+	<file src="files/textures/samp/wall041.dff" />
+	<file src="files/textures/samp/wall068.col" />
+	<file src="files/textures/samp/wall068.dff" />
+	<file src="files/textures/samp/wall075.col" />
+	<file src="files/textures/samp/wall075.dff" />
+	<file src="files/textures/samp/wall087.col" />
+	<file src="files/textures/samp/wall087.dff" />
+	<file src="files/textures/samp/wall103.col" />
+	<file src="files/textures/samp/wall103.dff" />
+	<file src="files/textures/samp/beach_sfs.txd" />
+	<file src="files/textures/samp/Plane62_5x15Grass1.col" />
+	<file src="files/textures/samp/Plane62_5x15Grass1.dff" />
+	<file src="files/textures/samp/SpeedCamera1.txd" />
+	<file src="files/textures/samp/SpeedCamera1.col" />
+	<file src="files/textures/samp/SpeedCamera1.dff" />
+	
+	<file src="files/textures/vgsncircon.txd" />
+	<file src="files/textures/tankstelle.txd" />
+	<file src="files/textures/wshxrefpump.dff" />
+	<file src="files/textures/wshxrefpump.txd" />
+	<file src="files/textures/bank_tunnel.dff" />
+	<file src="files/textures/bank_tunnel.col" />
+	
+	<file src="files/textures/cpaintjob.fx" />
+	
+	<file src="files/shaders/image3D.fx" />
+	<file src="files/shaders/blackwhite.fx" />
+	<file src="files/shaders/overlay.fx" />
+	<file src="files/shaders/lights.fx" />
+</meta>

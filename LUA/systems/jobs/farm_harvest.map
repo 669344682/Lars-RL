@@ -1,0 +1,20 @@
+<map edf:definitions="editor_main">
+    <marker id="marker (cylinder) (16)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-136.3" posY="52.7" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (17)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-185.5" posY="-75.7" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (18)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-225.2" posY="91.5" posZ="2.3" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (19)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-263.70001" posY="-50.9" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (20)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-226.89999" posY="-66.5" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (21)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-256.79999" posY="3.1" posZ="2.3" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (22)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-245.60001" posY="42.6" posZ="2.2" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (23)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-183.89999" posY="65.4" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (24)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-153.8" posY="7.2" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (25)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-167.10001" posY="-33.2" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (26)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-213" posY="59.5" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (27)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-165.60001" posY="38.9" posZ="2.6" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (28)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-198.2" posY="25.4" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (29)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-224.60001" posY="14" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (30)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-182.8" posY="-0.9" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (31)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-211.8" posY="-17.1" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (32)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-237.5" posY="-30.3" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+    <marker id="marker (cylinder) (33)" type="cylinder" color="#0000ffff" size="4" interior="0" dimension="0" alpha="255" posX="-198.89999" posY="-42.7" posZ="3.1" rotX="0" rotY="0" rotZ="0"></marker>
+</map>

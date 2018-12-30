@@ -1,0 +1,1225 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+todo:
+-shopping app (pizza, waffen etc)
+-stats app
+-premium app;
+[17:52:31] Franz: Also wir hatten früher folgende Funktionen darin: Musikbox/Blaster - man könnte eine box auf sein Auto attachen und die musik wurde gestreamt via playsoundd3 im Umkreis, der Ghettoblaster, für die Handy mit boneattach. Dort gab es die Möglichkeit Links direkt abzuspielen oder 5 Stück abzuspeichern. Dann konnte man dort noch die Lautstärke anpassen und es gab wie gesagt zwei Buttons, einen für die MusicBox und einen für den Blaster
+[17:52:55] Franz: Dann hatten wir noch die Möglichkeit, den Status zu ändern
+[17:53:28] Franz: Der Rest war ein bisschen OP: Auto alle 5 Minuten fixen lassen, Auto alle 5 min Tanken lassen.... glaube das sollten wir eher weglassen
+[17:54:13] Franz: der Rest wäre außerhalb vom Panel
+[17:54:30 | Bearbeitet 17:55:07] Franz: "Eine Premium Mitgliedschaft bietet Dir folgende Vorteile:
+inGame-Funktionen:
+Kennzeichnung als Premium-User
+Premium-Panel /pp (beinhaltet: Lautsprecher, Ghettoblaster, Auto tanken, Fahrzeug reparieren)
+
+
+
+
+- Home app zum verwalten des hauses (lock unlock location anzeiegn etc.)
+- Support app, like messages.
+- Ghettoblaster custoim mp3 + youtube
+- SAN NEWS APP
+
+
+Done, needs to be tested:
+- Calcualtor
+- Music
+- SMS
+-->
+	<head>
+		<meta charset	="utf-8" />
+		<meta http-equiv="Content-Type"	content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		
+		<script>
+		isMTA = false;
+		var pathFix = 'http://mta/sl_rl/files/html/iphone/';
+		if (!isMTA) {
+			pathFix = './';
+		}
+		document.write('\
+		<link rel="stylesheet" href="'+pathFix+'css/framework7.ios.css?'+Math.random()+'" /'+''+'>\
+		<link rel="stylesheet" href="'+pathFix+'css/iphone.css?'+Math.random()+'" /'+''+'>\
+		<link rel="stylesheet" href="'+pathFix+'css/font-awesome.css?'+Math.random()+'" /'+''+'>\
+		<link rel="stylesheet" href="'+pathFix+'css/font-awesome-animation.min.css?'+Math.random()+'" /'+''+'>\
+		\
+		<script src="'+pathFix+'js/jquery-3.0.0.min.js?'+Math.random()+'" type="text/javascript"><'+''+'/script>\
+		<script src="'+pathFix+'js/Chart.js?'+Math.random()+'" type="text/javascript"><'+''+'/script>\
+		<script src="'+pathFix+'js/usefull.js?'+Math.random()+'" type="text/javascript"><'+''+'/script>\
+		<script src="'+pathFix+'js/framework7.min.js?'+Math.random()+'" type="text/javascript"><'+''+'/script>\
+		<script src="'+pathFix+'js/iphone.js?'+Math.random()+'" type="text/javascript"><'+''+'/script>\
+		');
+		</script>
+	</head>
+	<body>
+		<div id="homeScreen">
+			
+			<div id="topBar">
+				<span id="topBarLeft" style="position:relative;width:43%;min-width:43%;float:left;">&nbsp;••••• Netz</span>
+				<span id="topBarMiddle" style="position:relative;width:14%;min-width:14%;float:left;text-align:center;">
+					<div class="icon-lock" style="float: left">00:00</div>
+				</span>
+				<span id="topBarRight" style="position:relative;width: 43%;min-width:43%;float:right;text-align:right;">
+					<span id="batteryPercent" style="margin-right:13px;">100 %</span>
+					<span id="batSymbol" class="battery p100"  style="margin-right:13px;">&nbsp;</span>
+					<img id="batLoadingSymbol" style="margin-top:1px;" height="12" src="./images/ui/flash_w.png"/>
+				</span>
+			</div>
+			
+			<div id="apps" class="apps">
+				<span class="appIcon">
+					<img class="appImg" src="images/apps/settings.png" height="80%" onclick=""/>
+					<span class="appName"><center>App</center></span>
+				</span>
+			</div>
+			
+			<div id="pages" style="text-align:center; color:white; position:relative; top:24.1em;">
+				•
+			</div>
+			
+			<div id="dock">
+				<div id="dockApps">
+					<span class="appIcon dockapp">
+						<img class="appImg" src="images/apps/settings.png" height="80%" onclick=""/>
+						<span class="appName"><center>App</center></span>
+					</span>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- APPS -->
+			<div class="app" id="weatherApp">
+				<div class="appContent hidescroll">
+					<!--<p style="position:relative;top:20%;font-size:17px;text-align:center;">
+						<b style="font-size:30px;" id="weatherLocation">Los Santos</b><br>
+						<span id="weatherName">Sonnig</span><br>
+						<span style="font-size:60px;" id="weatherTemp">25°<span>
+					</p>-->
+
+<!--<p style="position:relative;top:20%;font-size:17px;text-align:center;">
+						<b style="font-size:30px;" id="weatherLocation">Los Santos</b><br>
+						<span id="weatherName">Sonnig</span><br>
+						<span style="font-size:60px;" id="weatherTemp">25°<span>
+					</p>-->
+
+
+
+					<div class="city-detail">
+						<section class="city-header">
+							<b style="font-size:30px;" id="weatherLocation">Los Santos</b><br>
+							<span style="font-size:17px" id="weatherName"></span><br>
+							<span style="font-size:60px;" id="weatherTemp"><span>
+						</section>
+						<section class="today">
+							<ul class="today-overview">
+								<li>Heute</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="imgToday" src="" height="30" weight="30" style="margin-top:-6px;"></li>
+								<li id="tempMinNow"></li>
+								<li id="tempMaxNow"></li>
+							</ul>
+						</section>
+						<section class="forecast">
+							<ul class="forecast-list" id="weatherDays">
+								
+							</ul>
+						</section>
+						<section class="today-details">
+						<p class="today-summary" id="wTodayText">
+							
+						</p>
+						<ul class="today-details-list">
+							<li>
+								<ul>
+									<li>Sonnenaufgang:</li>
+									<li id="sunriseNow"></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li>Sonnenuntergang:</li>
+									<li id="sunsetNow"></li>
+								</ul>
+							</li>
+							<li></li>
+							<li>
+								<ul>
+									<li>Luftfeuchtigkeit:</li>
+									<li id="humidityNow"></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li>Sichtweite:</li>
+									<li id="visibilityNow"></li>
+								</ul>
+							</li>
+							<li></li>
+							<li>
+								<ul>
+									<li>Wind:</li>
+									<li id="windNow"></li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li>Luftdruck:</li>
+									<li id="pressureNow"></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="app" id="notesApp">
+				<div class="appContent">
+					<textarea id="noteText" style="resize: none; width:96%; height:95%; background-color:transparent; border:0px;" maxlength="2500" placeholder="Notizen welche Du hier hinein schreibst werden automatisch gespeichert."></textarea>
+				</div>
+			</div>
+			
+			<div class="app" id="settingsApp">
+				<div class="appContent">
+					
+					
+					<div class="navbar">
+						<div class="navbar-inner">
+							<div class="left">
+								<a href="#" class="back link"> <i class="icon icon-back"></i><span>Zurück</span></a>
+							</div>
+							<div style="left: -6.5px; transform: translate3d(0px, 0px, 0px);" class="center sliding">Einstellungen</div>
+							<div class="right"><a class="link" style="visibility:hidden;"></a></div>
+						</div>
+					</div>
+					
+					<div class="hidescroll" style="position: relative; max-height:438px;">
+						<div class="content-block-title" style="margin-top:10px;">Fahrzeuge</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-toggle"></i></div>
+										<div class="item-inner"> 
+											<div class="item-title label" style="color:black;">Flugmodus</div>
+											<div class="item-input">
+												<label class="label-switch" id="flightToggleInner">
+													<input type="checkbox" id="flightToggle" onchange="toggleSettingsUpdate();" />
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-toggle"></i></div>
+										<div class="item-inner"> 
+											<div class="item-title label" style="color:black;">Einführungshilfen</div>
+											<div class="item-input">
+												<label class="label-switch">
+													<input type="checkbox" id="firstGuideToggle" onchange="toggleSettingsUpdate();" />
+													<div class="checkbox" id="firstGuideToggleDiv"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="item-link" onclick="myApp.alert('Um ein eigenes Hintergrundbild zu verwenden, füge dein Hintergrundbild im Format PNG und in der Auflösung 750x1334 im MTA-Ordner nach /mods/deathmatch/resources/<br>resname/files/images/iphone/<br>customBg.png ein.', 'Hintergrundbild');">
+										<div class="item-content">
+											<div class="item-media"><i class="icon icon-f7"></i></div>
+											<div class="item-inner">
+												<div class="item-title">Hintergrundbild</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="content-block-title" style="margin-top:20px;">Phone-Farbe</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<label class="label-radio item-content">
+										<input type="radio" name="color-radio" value="Silber" onclick="changeColor('Silber');"/>
+										<div class="item-inner">
+											<div class="item-title" style="color:black;">Silber</div>
+										</div>
+									</label>
+								</li>
+								<li>
+									<label class="label-radio item-content">
+										<input type="radio" name="color-radio" value="Spacegrey" onclick="changeColor('Spacegrey');"/>
+										<div class="item-inner">
+											<div class="item-title" style="color:black;">Spacegrey</div>
+										</div>
+									</label>
+								</li>
+								<li>
+									<label class="label-radio item-content">
+										<input type="radio" name="color-radio" value="Gold" onclick="changeColor('Gold');"/>
+										<div class="item-inner">
+											<div class="item-title" style="color:black;">Gold</div>
+										</div>
+									</label>
+								</li>
+								<li>
+									<label class="label-radio item-content">
+										<input type="radio" name="color-radio" value="Rosegold" onclick="changeColor('Rosegold');"/>
+										<div class="item-inner">
+											<div class="item-title" style="color:black;">Roségold</div>
+										</div>
+									</label>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="content-block-title" style="margin-top:20px;">Spiel-Einstellungen</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-name"></i></div>
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Text</div>
+											<div class="item-input">
+												<input type="text" placeholder="Textfeld"/>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-gender"></i></div>
+										<div class="item-inner"> 
+											<div class="item-title label" style="color:black;">Select</div>
+											<div class="item-input">
+												<select>
+													<option>Male</option>
+													<option>Female</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-toggle"></i></div>
+										<div class="item-inner"> 
+											<div class="item-title label" style="color:black;">Switch</div>
+											<div class="item-input">
+												<label class="label-switch">
+													<input type="checkbox"/>
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-settings"></i></div>
+										<div class="item-inner"> 
+											<div class="item-title label" style="color:black;">Scroll</div>
+											<div class="item-input">
+												<div class="range-slider">
+													<input type="range" min="0" max="100" value="50" step="0.1"/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-comment"></i></div>
+										<div class="item-inner"> 
+											<div class="item-title label" style="color:black;">Textarea</div>
+											<div class="item-input">
+												<textarea></textarea>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="content-block-title" style="margin-top:20px;">Checkbox group</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<label class="label-checkbox item-content">
+										<input type="checkbox" name="ks-checkbox" value="Books" checked="checked"/>
+										<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+										<div class="item-inner">
+											<div class="item-title" style="color:black;">Books</div>
+										</div>
+									</label>
+								</li>
+								<li>
+									<label class="label-checkbox item-content">
+										<input type="checkbox" name="ks-checkbox" value="Movies" />
+										<div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+										<div class="item-inner">
+											<div class="item-title" style="color:black;">Movies</div>
+										</div>
+									</label>
+								</li>
+							</ul>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="app" id="messagesApp">
+				<div class="appContent">
+					<div class="navbar">
+						<div class="navbar-inner">
+							<div class="left">
+								<a id="messageBackLink" style="visibility:hidden;" href="#" onclick="showMessage(false);" class="back link"> <i class="icon icon-back"></i><span>Zurück</span></a>
+							</div>
+							<div style="left: -6.5px; transform: translate3d(0px, 0px, 0px);" class="center sliding" id="messagesTitle">Nachrichten</div>
+							<div class="right">
+								<!-- Right link contains only icon - additional "icon-only" class-->
+								<a id="messageNewLink" href="#" onclick="showMessage('new');" class="link"> Neu</a>
+							</div>
+						</div>
+					</div>
+					
+					<div id="messageScroll" class="hidescroll" style="position: relative; height:438px;">
+						<div class="list-block" id="messageList">
+							<ul id="messageListInner">
+								<!--<li id="messagesChat-1" onclick="showMessage(1);">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-comment"></i></div>
+										<div class="item-inner" style="color:blue;">
+											<span style="float:left; width:60%;"><b>Hans</b></span>
+											<span style="text-align:right;float:right; width:40%; font-size:12px;">06.07.2016</span>
+										</div>
+									</div>
+								</li>
+								-->
+							</ul>
+						</div>
+						
+						<div id="messageChat" style="display:none;">
+							<!--<div class="message from">Test 123 Test 123</div>
+							<div class="message to">LoL LoL LoL LoL LoL</div>-->
+						</div>
+						
+						<div class="list-block" id="newMessageContactList" style="display:none;">
+							<ul id="newMessageContactListInner">
+								<!--<li onclick="">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-name"></i></div>
+										<div class="item-inner">
+											<span style="float:left;"><b>Spieler #1</b></span>
+										</div>
+									</div>
+								</li>-->
+							</ul>
+						</div>
+						
+					</div>
+					
+					<div id="messageTextField" style="display:none;position:relative;">
+						<form style="position:relative;" onsubmit="answerSMS();return false;">
+							<input id="newSmsText" style="margin-top:4px;margin-left:4px;border-radius: 15px; border:solid 1px white; padding:5px; width:72%;" type="text" placeholder="Nachricht" maxlength="200" />
+							<input type="submit" style="display:none;"/>
+							
+							<a href="#" onclick="answerSMS();"><b>Senden</b></a> 
+						</form>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="app" id="calculatorApp">
+				<div class="appContent" id="calcContent">
+					<div id="calculatorHistory"></div>
+					<div id="calculatorResult">0</div>
+					
+					<div class="calculatorBtns">
+						<span class="calculatorBtn" onclick="calcClick(false);"></span>
+						<span class="calculatorBtn" onclick="calcClick('invert');"></span>
+						<span class="calculatorBtn" onclick="calcClick('%');"></span>
+						<span class="calculatorBtn" onclick="calcClick('/');"></span>
+						<span class="calculatorBtn" onclick="calcClick(7);"></span>
+						<span class="calculatorBtn" onclick="calcClick(8);"></span>
+						<span class="calculatorBtn" onclick="calcClick(9);"></span>
+						<span class="calculatorBtn" onclick="calcClick('*');"></span>
+						<span class="calculatorBtn" onclick="calcClick(4);"></span>
+						<span class="calculatorBtn" onclick="calcClick(5);"></span>
+						<span class="calculatorBtn" onclick="calcClick(6);"></span>
+						<span class="calculatorBtn" onclick="calcClick('-');"></span>
+						<span class="calculatorBtn" onclick="calcClick(1);"></span>
+						<span class="calculatorBtn" onclick="calcClick(2);"></span>
+						<span class="calculatorBtn" onclick="calcClick(3);"></span>
+						<span class="calculatorBtn" onclick="calcClick('+');"></span>
+						<span class="calculatorBtn" style="width:140px;" onclick="calcClick(0);"></span>
+						<span class="calculatorBtn" onclick="calcClick('.');"></span>
+						<span class="calculatorBtn" onclick="calcClick('result');"></span>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<div class="app" id="phoneApp">
+				<div class="appContent" id="phoneContent" style="">
+
+					<div id="phoneInner">
+						
+						<!--<span style="position:absolute;width:30px;height:30px;top:22px;left:20px;" onclick="phoneClick('add');"></span>-->
+						<span style="position:absolute;width:60%;top:24px;left:55px;text-align:center;color:black;font-size:18px;" id="phoneNumberInput"></span>
+						<span style="position:absolute;width:30px;height:30px;top:22px;left:230px;" onclick="phoneClick('rmlast');"></span>
+						
+						<div class="phoneBtns">
+							<span class="phoneBtn" onmousedown="phoneClick(1);"></span>
+							<span class="phoneBtn" onmousedown="phoneClick(2);"></span>
+							<span class="phoneBtn" onmousedown="phoneClick(3);"></span>
+							<span class="phoneBtn" onmousedown="phoneClick(4);"></span>
+							<span class="phoneBtn" onmousedown="phoneClick(5);"></span>
+							<span class="phoneBtn" onmousedown="phoneClick(6);"></span>
+							<span class="phoneBtn pBtnlast" onmousedown="phoneClick(7);"></span>
+							<span class="phoneBtn pBtnlast" onmousedown="phoneClick(8);"></span>
+							<span class="phoneBtn pBtnlast" onmousedown="phoneClick(9);"></span>
+							<span class="phoneBtn pBtnlast" onmousedown="phoneClick('*');"></span>
+							<span class="phoneBtn pBtnlast" onmousedown="phoneClick(0);"></span>
+							<span class="phoneBtn pBtnlast" onmousedown="phoneClick('#');"></span>
+							
+							<span class="phoneBtn pBtncall" onclick="startCall(false);"></span>
+							
+						</div>
+						
+					</div>
+					
+					<div id="phoneContactInner" style="display:none;">
+						
+						<span style="position:absolute;width:100%;text-align:center;color:black;font-size:18px;font-weight:bold;">Kontakte</span>
+						<!--<span style="position:absolute;width:100%;top:-1px;text-align:right;color:black;font-size:22px;font-weight:bold;"><a href="#" onclick="alert('New contact');">+</a>&nbsp;&nbsp;&nbsp;</span>-->
+						<span style="position:absolute;top:40px;left:24%;color:black;font-size:18px;" id="phoneMyName">Name</span>
+						<span style="position:absolute;top:61px;left:46%;color:grey;font-size:11px;" id="phoneMyTel">12345</span>
+						<div class="phoneContactList list-block hidescroll">
+							<ul id="phoneContactsInner">
+								<!--
+								<li class="list-group-title">A</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-name"></i></div>
+										<div class="item-inner">
+											<span style="float:left;width:75%;"><b>fs626</b></span>
+											<span style="width:25%;">
+												<i class="smsIcon" onclick=""></i>
+												<i class="phoneIcon" onclick="startCall('fs626');"></i>
+											</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-name"></i></div>
+										<div class="item-inner">
+											<span style="float:left;width:75%;"><b>Lars</b></span>
+											<span style="width:25%;">
+												<i class="smsIcon" onclick=""></i>
+												<i class="phoneIcon" onclick="startCall('Lars');"></i>
+											</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-form-name"></i></div>
+										<div class="item-inner">
+											<span style="float:left;width:75%;"><b>Lars2</b></span>
+											<span style="width:25%;">
+												<i class="smsIcon" onclick="alert('SMS');"></i>
+												<i class="phoneIcon" onclick="startCall('Lars2');"></i>
+											</span>
+										</div>
+									</div>
+								</li>
+								-->
+							</ul>
+						</div>
+						
+					</div>
+					
+					<span style="position:absolute;top:450px;left:95px;width:35px;height:30px;" onclick="phoneTabSwitch('contacts');"></span>
+					<span style="position:absolute;top:450px;left:155px;width:40px;height:30px;" onclick="phoneTabSwitch('phone');"></span>
+				</div>
+				
+				<div style="position:absolute;height:500px;top:0;width:100%; display:none;" id="callContent">
+					<span id="callName" style="position:absolute;width:100%;top:60px;text-align:center;color:white;font-size:24px;">NAME</span>
+					
+					<span id="callSubtitle" style="position:absolute;width:100%;top:85px;text-align:center;color:white;font-size:15px;">SUBTITLE</span>
+					
+					<span id="incomingCallDecline" style="position:absolute;margin-left:35px;top:380px;background:url(images/ui/decline.png) no-repeat;background-size: 100% 100%;width:60px;height:60px;" onclick="answerCall(0);"></span>
+					
+					<span id="incomingCallAccept" style="position:absolute;right:0;margin-right:35px;top:380px;background:url(images/ui/accept.png) no-repeat;background-size: 100% 100%;width:60px;height:60px;" onclick="answerCall(1);"></span>
+					
+					<span id="outgoingCallDecline" style="position:absolute;left:0;top:380px;background:url(images/ui/decline.png) no-repeat center;background-size: auto 100% !important;width:100%;height:60px;" onclick="answerCall(0);"></span>
+					
+				</div>
+			</div>
+			
+			
+			
+			<div class="app" id="musicApp">
+				<div class="appContent">
+					
+					<div class="musicInner">
+						<div class="musicInnerPlay" style="display:none;">
+							
+							<style id="durationColorFix"></style>
+							
+							<span id="musicPlayerCover" style="position:absolute;width:233px;height:206px;top:33px;left:24px;border-radius:5px;background:url(images/ui/cover.png) no-repeat center center;background-size:100% auto !important;">
+								Hier kommt der Lyric Text rein!
+							
+							</span>
+							
+							<span id="musicPlayerDurCur" style="position:absolute;width:40px;height:15px;top:260px;left:24px;color:grey;font-size:13px;">0:00</span>
+							
+							<span id="musicDurSlideCont" class="list-block range-slider-small" style="position:absolute;width:230px;top:242px;left:24px;">
+								<input id="musicDurSlide" style="width:100%;" type="range" min="0" max="0" value="0" step="1"/>
+							</span>
+							
+							<span id="musicPlayerDur" style="position:absolute;width:40px;height:15px;top:260px;left:216px;color:grey;font-size:13px;text-align:right;">0:00</span>
+							
+							<span id="musicPlayerTitle" class="" style="position:absolute;width:233px;height:20px;top:280px;left:24px;color:black;font-size:16px;font-weight:bold;text-align:center;">TITEL</span>
+							
+							<span id="musicPlayerInterpret" style="position:absolute;width:233px;height:20px;top:300px;left:24px;color:#ff2d55;font-size:14px;text-align:center;">ARTIST</span>
+							
+							<span id="musicPlayerRewindBack" style="position:absolute;width:30px;height:30px;top:328px;left:53px;" onclick="musicBackForwd('backwards');"></span>
+							
+							<span id="musicPlayerPlayPause" style="position:absolute;width:30px;height:30px;top:328px;left:128px;background-size:30px 30px !important;background:url(images/ui/playBtn.png) no-repeat;" onclick="musicPlayerClick('playpause');"></span>
+							
+							<span id="musicPlayerRewindForwards" style="position:absolute;width:30px;height:30px;top:328px;left:198px;" onclick="musicBackForwd('forwards');"></span>
+							
+							<span class="list-block range-slider" style="position:absolute;width:64%;top:366px;left:45px;">
+								<input id="musicVolumeSlide" type="range" min="0" max="100" value="75" step="1"/>
+							</span>
+							
+							
+							<script>
+							actionSheetButtons = [
+								[{
+									text: 'Bitte wähle das Ausgabegerät',
+									label: true
+								},
+								{
+									text: 'Phone',
+									onClick: function() {
+										myApp.alert('Phone', 'TODO');
+									}
+								},
+								{
+									text: 'Ghettoblaster',
+									onClick: function() {
+										myApp.alert('Ghettoblaster', 'TODO');
+									}
+								},
+								{
+									text: 'Musikbox',
+									onClick: function() {
+										myApp.alert('Musikbox', 'TODO');
+									}
+								},
+								],
+								[{
+									text: 'Abbrechen',
+									bold: true
+								}]
+							];
+							</script>
+							
+							<a href="#" onclick="myApp.actions(actionSheetButtons);" style="position:absolute;width:25px;height:25px;top:405px;left:91px;color:#ff2d55;" class="">
+								<i class="fa fa-podcast faa-pulse animated-hover" style="font-size:18px;margin-left:5px;margin-top:4px;"></i>
+							</a>
+							
+							<a id="playerLikeBtn" href="#" onclick="" style="position:absolute;width:25px;height:25px;top:405px;left:165px;color:#ff2d55;" class="">
+								<i id="playerLikeIcon" class="fa fa-heart-o faa-pulse animated-hover" style="font-size:18px;margin-left:5px;margin-top:4px;"></i>
+							</a>
+						</span>
+							
+						</div>
+						
+						
+						
+						<div class="musicInnerRadio" style="display:none;">
+							<span style="position:absolute;width:100%;top:12px;color:black;font-size:18px;font-weight:bold;text-align:center;">Radio</span>
+							
+							<span style="position:absolute;width:100%;top:12px;text-align:right;"><a href="#" onclick="musicTabClick('addRadio');">Bearbeiten</a></span>
+							
+							
+							<span style="position:absolute;width:100%;top:50px;color:black;height:355px;padding-left:8px;" class="musicContentScroll hidescroll" id="radioContentScroll">
+								<!--
+								<span class="mRadioBtn" style="background:url(images/radio/einslive.png) no-repeat center center; background-size:100% auto !important;" onclick="musicStartNew('http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live', '1Live', 'Subtitle...', 'images/radio/einslive.png', true);"></span>
+								-->
+							</span>
+							
+							<span style="position:absolute;width:100%;top:50px;color:black;height:355px;display:none;" id="radioChannelAdd hidescroll" class="musicContentScroll">
+								<div class="content-block-title">Radiosender hinzufügen</div>
+								<div class="list-block">
+									<ul>
+										<li>
+											<div class="item-content">
+												<div class="item-media"><i class="icon icon-form-name"></i></div>
+												<div class="item-inner">
+													<div class="item-title label" style="color:black;">Name</div>
+													<div class="item-input">
+														<input type="text" id="radioAddName" placeholder="Sendername"/>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="item-content">
+												<div class="item-media"><i class="icon icon-form-name"></i></div>
+												<div class="item-inner">
+													<div class="item-title label" style="color:black;">Stream-URL</div>
+													<div class="item-input">
+														<input type="text" id="radioAddURL" placeholder="http://example.com/stream"/>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<br>
+									<center><a href="#" onclick="addRadioChannel();" class="button button-big active" style="width:80%;">Hinzufügen</a></center>
+								</div>
+								
+								
+								<div class="content-block-title">Radiosender entfernen</div>
+								<div class="list-block">
+									<ul id="radioDelList">
+										<!--<li>
+											<div class="item-content">
+												<div class="item-media"><i class="icon icon-form-name"></i></div>
+												<div class="item-inner">
+													<span style="float:left;width:60%;">Sendername</span>
+													<span style="width:40%;">
+														<div class="swipeout-actions-right swipeout-actions-opened"><a href="#" onclick="" class="swipeout-delete" style="transform: translate3d(-109px, 0px, 0px);">Löschen</a></div>
+													</span>
+												</div>
+											</div>
+										</li>-->
+									</ul>
+								</div>
+							</span>
+						</div>
+						
+						<div class="musicInnerSearch">
+							<form onsubmit="searchMusic();return false;">
+								<input id="musicSearchText" style="position:absolute;width:175px;top:15px;left:38px;border:0px;background-color:transparent;" type="text" placeholder="Britney Spears - Oops!... I Did It Again" onclick="firstGuideHelp('Tippe hier den Interpreten und Titel ein bsp. „Coldplay Clocks“, wenn Du nur Interpret oder Titel eingibst, wird dein gesuchtes Lied möglicherweise nicht gefunden.');" />
+								<input type="submit" style="display:none;" />
+							</form>
+							
+							<span style="position:absolute;width:45px;height:20px;top:12px;left:230px;" onclick="searchMusic();return false;"></span>
+							
+							<span class="list-block musicContentScroll hidescroll" style="position:absolute;width:100%;top:50px;color:black;height:355px;">
+								<ul id="musicContentScrollInner">
+									
+									
+								</ul>
+							</span>
+						</div>
+						
+						<div class="musicInnerCharts" style="display:none;">
+							<span style="position:absolute;width:100%;top:12px;color:black;font-size:18px;font-weight:bold;text-align:center;">Charts</span>
+							
+							<span class="list-block musicContentScroll hidescroll" style="position:absolute;width:100%;top:50px;color:black;height:355px;">
+								<ul id="chartsContentScrollInner"></ul>
+							</span>
+						</div>
+						
+						<div class="musicInnerLikes" style="display:none;">
+							<span style="position:absolute;width:100%;top:12px;color:black;font-size:18px;font-weight:bold;text-align:center;">Likes</span>
+							
+							<span class="list-block search-here searchbar-found musicContentScroll hidescroll" style="position:absolute;width:100%;top:50px;color:black;height:355px;">
+								<ul id="likesContentScrollInner"></ul>
+							</span>
+						</div>
+						
+						
+						<div class="musicMp3Inner" style="display:none;">
+							<span style="position:absolute;width:100%;top:12px;color:black;font-size:18px;font-weight:bold;text-align:center;">MP3</span>
+							
+							<span style="position:absolute;width:100%;top:50px;color:black;height:355px;" id="musicMp3Scroll" class="musicContentScroll hidescroll">
+								<div class="content-block-title">Stream-URL</div>
+								<div class="content-block">
+									<div class="content-block-inner">
+										<p class="">Füge im folgenden Feld einen Link einer Streaming seite<sup>1</sup> oder zu einer Audiodatei<sup>2</sup> ein.</p>
+									</div>
+								</div>
+								<div class="list-block">
+									<ul>
+										<li>
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-input">
+														<input type="text" id="musicMp3URL" placeholder="http://example.com/music.mp3"/>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<br>
+									<center><a href="#" onclick="playCustomMp3();" class="button button-big active" style="width:80%;">Abspielen</a></center>
+									<br>
+									<small><sup>1</sup> Unterstützte Seiten: Dailymotion, Soundcloud, Vevo, Vimeo, YouTube</small><br>
+									<small><sup>2</sup> Unterstützte Formate: AAC, MP3, WAV, OGG, OPUS</small>
+								</div>
+							</span>
+						</div>
+						
+						
+						
+					</div>
+					
+					<div class="musicWhatsNowPlaying" style="display:none;" onclick="musicTabClick('player');">
+						<span class="" style="position:absolute;text-align:center;top:7px;height:20px;width:230px;" id="musicPlayNowTitle"></span>
+						
+						<span class="musicWhatsNowPlayingBtn" id="musicPlayNowBtn" style="position:absolute;text-align:center;left:241px;top:9px;height:20px;width:20px; background-size:20px 20px !important;background:url(images/ui/playBtn.png) no-repeat;" onclick="musicPlayerClick('playpause');"></span>
+					</div>
+					
+					<div id="musicTabs">
+						<span id="tabRadio" style="position:absolute;width:40px;height:40px;top:1px;left:20px;color:#949494;font-size:11px;" onclick="musicTabClick('radio');">
+							<i class="fa fa-headphones" style="font-size:24px;margin-left:8px;margin-top:3px;"></i>
+							<center>Radio</center>
+						</span>
+						
+						<span id="tabMP3" style="position:absolute;width:40px;height:40px;top:1px;left:70px;color:#949494;font-size:11px;" onclick="musicTabClick('mp3');">
+							<i class="fa fa-file-audio-o" style="font-size:24px;margin-left:8px;margin-top:3px;"></i>
+							<center>MP3</center>
+						</span>
+						
+						<span id="tabCharts" style="position:absolute;width:40px;height:40px;top:1px;left:120px;color:#949494;font-size:11px;" onclick="musicTabClick('charts');">
+							<i class="fa fa-line-chart" style="font-size:24px;margin-left:8px;margin-top:3px;"></i>
+							<center>Charts</center>
+						</span>
+						
+						<span id="tabLiked" style="position:absolute;width:40px;height:40px;top:1px;left:170px;color:#949494;font-size:11px;" onclick="musicTabClick('liked');">
+							<i class="fa fa-heart-o" style="font-size:24px;margin-left:8px;margin-top:3px;"></i>
+							<center>Liked</center>
+						</span>
+						
+						<span id="tabSearch" style="position:absolute;width:40px;height:40px;top:1px;left:220px;color:#949494;font-size:11px;" onclick="musicTabClick('search');" class="mTabActive">
+							<i class="fa fa-search" style="font-size:24px;margin-left:8px;margin-top:3px;"></i>
+							<center>Suche</center>
+						</span>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="app" id="vehiclesApp">
+				<div class="appContent">
+					
+					
+					<div class="navbar">
+						<div class="navbar-inner">
+							<div class="left">
+							</div>
+							<div style="left: 8px; transform: translate3d(0px, 0px, 0px);" class="center sliding">Fahrzeuge</div>
+							<div class="right">
+								<i class="fa fa-retweet faa-horizontal animated-hover" style="font-size:24px; color:#007aff;" onclick="respawnVehicle('all');"></i>
+							</div>
+						</div>
+					</div>
+					
+					<div class="hidescroll" style="position: relative; max-height:438px;">
+						<div class="content-block-title" style="margin-top:15px;">Fahrzeuge</div>
+						<div class="list-block">
+							<ul id="allVehicles">
+								
+							</ul>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="app" id="franchiseApp">
+				<div class="appContent">
+					
+					
+					<div class="navbar">
+						<div class="navbar-inner">
+							<div class="left">
+							</div>
+							<div style="left: 8px; transform: translate3d(0px, 0px, 0px);" class="center sliding">Franchise-Shop</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					
+					<div class="hidescroll" style="position: relative; max-height:438px;">
+						<div class="content-block-title" style="margin-top:20px;" id="franchiseName">?</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Kasse</div>
+											<div class="item-input" id="franchiseKasse">
+												?
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Einn. Heute</div>
+											<div class="item-input" id="franchiseIncome">
+												?
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Kunden Heute</div>
+											<div class="item-input" id="franchiseCustomers">
+												?
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Käufe Heute</div>
+											<div class="item-input" id="franchiseSales">
+												?
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="content-block-title" style="margin-top:20px;">Kasse</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="fa fa-money"></i></div>
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Summe</div>
+											<div class="item-input">
+												<input type="text" id="franchiseAmount" placeholder="1234">
+											</div>
+										</div>
+									</div>
+									<div class="content-block" style="margin-top:5px;padding-bottom:10px;">
+										<div class="row">
+											<div class="col-50"><a onclick="franchisePayInOut('out');" class="button button-big active">Auszahlen</a></div>
+											<div class="col-50"><a onclick="franchisePayInOut('in');" class="button button-big">Einzahlen</a></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="content-block-title" style="margin-top:20px;">Statistiken</div>
+						<div class="list-block" id="franchiseBottom">
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+<script>
+var opt = {
+	"type":"line",
+	"data":{
+		"labels":[
+			"13.11",
+			"14.11",
+			"15.11",
+			"16.11",
+			"17.11",
+			"18.11",
+			"19.11",
+			"20.11",
+			"21.11",
+			"22.11",
+		],
+		"datasets":[
+			{
+				"label":"Kunden",
+				"data":[
+					19,
+					57,
+					58,
+					65,
+					59,
+					80,
+					81,
+					56,
+					55,
+					40
+				],
+				"fill":false,
+				"borderColor":"rgb(255, 0, 0)",
+				"lineTension":0.1
+			},
+			{
+				"label":"Verkäufe",
+				"data":[
+					10,
+					29,
+					32,
+					41,
+					35,
+					62,
+					40,
+					29,
+					39,
+					31
+				],
+				"fill":false,
+				"borderColor":"rgb(0, 0, 255)",
+				"lineTension":0.1
+			},
+			{
+				"label":"Einnahmen",
+				"data":[
+					120,
+					340,
+					361,
+					410,
+					325,
+					611,
+					589,
+					695,
+					250,
+					320
+				],
+				"fill":false,
+				"borderColor":"rgb(75, 192, 192)",
+				"lineTension":0.1
+			}
+		]
+	},
+	"options":{
+		
+	}
+};
+//new Chart(document.getElementById("visitsIncome"), opt);
+</script>
+			
+			
+			<div class="app" id="homeApp">
+				<div class="appContent">
+					
+					
+					<div class="navbar">
+						<div class="navbar-inner">
+							<div class="left">
+							</div>
+							<div style="left: 8px; transform: translate3d(0px, 0px, 0px);" class="center sliding">Häuser</div>
+							<div class="right">
+							</div>
+						</div>
+					</div>
+					
+					<div class="hidescroll" style="position: relative; max-height:438px;">
+						<div class="content-block-title" style="margin-top:15px;">Meine Häuser</div>
+						<div class="list-block">
+							<ul id="myHouses">
+								
+							</ul>
+						</div>
+						<br>
+						<div class="content-block-title" style="margin-top:15px;">Einmietungen</div>
+						<div class="list-block">
+							<ul id="myRentings">
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			<div class="app" id="safariApp">
+				<div class="appContent">
+					
+					<span style="position:absolute;width:260px;top:2px;left:10px;">
+						<input id="musicSearchText" style="width:100%;border:0px;background-color:transparent;text-align:center;" type="text" placeholder="Suchbegriff oder Website" />
+					</span>
+					
+					<span style="position:absolute;width:28px;height:28px;top:450px;left:10px;" onclick="alert('backwards');"></span>
+					<span style="position:absolute;width:28px;height:28px;top:450px;left:247px;" onclick="alert('forwards');"></span>
+				</div>
+			</div>
+			
+			
+			
+			<div class="app bankingTransactionsBg" id="bankingApp">
+				<div class="appContent">
+					
+					<div id="bankSendCont" style="display:none;">
+						<span style="position:absolute;width:100%;top:4px;text-align:center;font-size:18px;font-weight:bold;">Überweisung</span>
+						
+						<span style="position:absolute;width:100%;top:40px;height:365px;background-color:transparent;border:0px;" class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="fa fa-user-circle-o" style="font-size:29px;"></i></div>
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Empfänger</div>
+											<div class="item-input">
+												<input type="text" placeholder="HansWurst" id="transactionReceiver"/>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="fa fa-money" style="font-size:29px;"></i></div>
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Summe</div>
+											<div class="item-input">
+												<input type="text" placeholder="666" id="transactionSum"/>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="fa fa-comment" style="font-size:29px;"></i></div>
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Verwendungszweck</div>
+											<div class="item-input">
+												<textarea  placeholder="Für letze Nacht..." maxlength="75" id="transactionReason"></textarea>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</span>
+						
+						<span style="position:absolute;width:100%;top:413px;text-align:center;font-size:16px;font-weight:bold;" onclick="transferMoney();">Überweisung ausführen</span>
+					</div>
+					
+					<div id="bankTransactionsCont">
+						<span style="position:absolute;width:100%;top:4px;text-align:center;font-size:18px;font-weight:bold;">Transaktionen</span>
+						
+						<span style="position:absolute;width:100%;top:32px;text-align:center;font-size:25px;font-family:'San Francisco Semibold';font-weight:bold;" id="curBankMoney">? $</span>
+						
+						
+						<span style="position:absolute;width:100%;top:73px;height:367px;background-color:transparent;border:0px;" class="list-block hidescroll">
+							<ul id="bankTransactions">
+								<!--<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<span style="float:left;width:65%;">Hauskauf<br><small>08.07.2016, 15:33 Uhr</small></span>
+											<span style="float:right;width:35%;color:red;">
+												100.000 $ -
+											</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner">
+											<span style="text-align:left;width:65%;">Lohn<br><small>06.07.2016, 11:11 Uhr</small></span>
+											<span style="text-align:right;width:35%;color:green;">
+												5.888 $ +
+											</span>
+										</div>
+									</div>
+								</li>
+								-->
+							</ul>
+						</span>
+						
+					</div>
+					
+					<div id="bankPrepaidCont" style="display:none;">
+						<span style="position:absolute;width:100%;top:4px;text-align:center;font-size:18px;font-weight:bold;">Handyguthaben</span>
+						
+						<span style="position:absolute;width:100%;top:40px;height:365px;background-color:transparent;border:0px;" class="list-block">
+							<ul>
+								<li>
+									<center>
+										<img src="images/ui/sl_mobile.png" width="240" height="100" style="margin-top:30px;padding-bottom:30px;">
+									</center>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-inner" style="margin-left:-6px;">
+											
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media"><i class="fa fa-money"></i></div>
+										<div class="item-inner">
+											<div class="item-title label" style="color:black;">Wert</div>
+											<div class="item-input">
+												<select class="" id="prepaidMoney">
+													<option value="">Auswählen</option>
+													<option value="10">10 $</option>
+													<option value="20">20 $</option>
+													<option value="50">50 $</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</span>
+						
+						<span style="position:absolute;width:100%;top:413px;text-align:center;font-size:16px;font-weight:bold;" onclick="loadPrepaid();">Guthaben aufladen</span>
+					</div>
+					
+					
+					
+					<span id="tabPrepaid" style="position:absolute;width:48px;height:40px;top:441px;left:58px;color:#cac9c9;font-size:11px;" onclick="bankingSwitchTab('prepaid');">
+						<i class="fa fa-credit-card" style="font-size:24px;margin-left:11px;margin-top:3px;"></i>
+						<center>Guthaben</center>
+					</span>
+					
+					<span id="tabSend" style="position:absolute;width:48px;height:40px;top:441px;left:116px;color:#cac9c9;font-size:11px;" onclick="bankingSwitchTab('send');">
+						<i class="fa fa-paper-plane-o" style="font-size:24px;margin-left:10px;margin-top:3px;"></i>
+						<center>Senden</center>
+					</span>
+					
+					<span id="tabTransactions" class="bTabActive" style="position:absolute;width:48px;height:40px;top:441px;left:174px;color:#cac9c9;font-size:11px;" onclick="bankingSwitchTab('transactions');">
+						<i class="fa fa-money" style="font-size:24px;margin-left:11px;margin-top:3px;"></i>
+						<center>Übersicht</center>
+					</span>
+				</div>
+			</div>
+			
+			<div style="display:none;position:fixed;z-index:500;left:72px;top:181px;width:140.6px;height:137.3px;background:url(images/ui/volume.png) no-repeat center center;background-size:100% 100%;" id="volumeOverlay">
+			</div>
+			
+		</div>		
+	</body>
+</html>
