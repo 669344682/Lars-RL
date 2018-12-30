@@ -209,11 +209,11 @@ if (!empty($ID) && !empty($SERVICE) && ($SERVICE == 'vimeo' || $SERVICE == 'vevo
 			if ($OK) {
 				$DIRECT = "";
 				if ($SERVICE == 'youtube') {
-					$DIRECT = str_replace("\r", '', str_replace("\n", '', shell_exec('./youtube-dl -f "bestaudio[ext=webm]" --get-url "http://youtube.com/watch?v='.$ID.'"')));
+					$DIRECT = str_replace("\r", '', str_replace("\n", '', shell_exec('./youtube-dl --ffmpeg-location ./ -f "bestaudio[ext=webm]" --get-url "http://youtube.com/watch?v='.$ID.'"')));
 				} else if ($SERVICE == 'soundcloud') {
-					$DIRECT = str_replace("\r", '', str_replace("\n", '', shell_exec('./youtube-dl -f "bestaudio[ext=mp3]" --get-url "'.$uFix.$ID.'"')));
+					$DIRECT = str_replace("\r", '', str_replace("\n", '', shell_exec('./youtube-dl --ffmpeg-location ./ -f "bestaudio[ext=mp3]" --get-url "'.$uFix.$ID.'"')));
 				} else {
-					$cmd = './youtube-dl --add-metadata --no-cache-dir --rm-cache-dir --no-check-certificate --ignore-errors --rate-limit 5000K --extract-audio --audio-format '.(($fileExt=='ogg')?'vorbis':$fileExt).' "'.$uFix.$ID.'" -o "'.$fPthEx.'"';
+					$cmd = './youtube-dl --ffmpeg-location ./ --add-metadata --no-cache-dir --rm-cache-dir --no-check-certificate --ignore-errors --rate-limit 5000K --extract-audio --audio-format '.(($fileExt=='ogg')?'vorbis':$fileExt).' "'.$uFix.$ID.'" -o "'.$fPthEx.'"';
 					$x = shell_exec($cmd);
 					
 					$ret['cmd']		= $cmd;
