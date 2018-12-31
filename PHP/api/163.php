@@ -110,7 +110,7 @@ function getLyric($id) {
 
 
 function getImage($url, $id) {
-	$tmp = "tmp/163/".$id.".webp";
+	$tmp = "tmp/163/".$id.".jpg";
 	if (file_exists($tmp)) {
 		$im = file_get_contents($tmp);
 		return $im;
@@ -130,8 +130,8 @@ function getImage($url, $id) {
 			$tmpimg = imagecreatetruecolor($nWidth, $nHeight);
 			imagecopyresampled($tmpimg, $im, 0, 0, 0, 0, $nWidth, $nHeight, $width, $height);
 		}
-		//imagejpeg($tmpimg,null,35);
-		imagewebp($tmpimg,null,30);
+		imagejpeg($tmpimg,null,35);
+		//imagewebp($tmpimg,null,30);
 		
 	$get = ob_get_clean();
 	
@@ -307,11 +307,11 @@ if (isset($_REQUEST['s'])) {
 } else if (isset($_REQUEST['image']) && isset($_REQUEST['id'])) {	
 	
 	header_remove('Cache-Control');
-	header("Content-Type: image/webp");
+	header("Content-Type: image/jpg");
 	
 	$im= getImage(hex2bin($_REQUEST['image']), $_REQUEST['id']);
 	
-	set_eTagHeaders("tmp/163/".$_REQUEST['id'].".webp");
+	set_eTagHeaders("tmp/163/".$_REQUEST['id'].".jpg");
 	
 	echo $im;
 	

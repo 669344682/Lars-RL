@@ -26,7 +26,7 @@ $apiAuth	= @$_REQUEST['apiAuth'];
 
 if (empty($apiUser) || empty($apiAuth) || strtolower(hash('sha256', $apiUser.SALZ)) != strtolower($apiAuth)) {
 	header("Content-Type: text/html");
-	die('Authentication Failed!<br>Suck my 🍆');
+	die('Authentication Failed!<br>Suck my ??');
 }
 
 if (!empty($ID) && !empty($SERVICE) && ($SERVICE == 'vimeo' || $SERVICE == 'vevo' || $SERVICE == 'youtube' || $SERVICE == 'dailymotion' || $SERVICE == 'soundcloud')) {
@@ -34,7 +34,7 @@ if (!empty($ID) && !empty($SERVICE) && ($SERVICE == 'vimeo' || $SERVICE == 'vevo
 	if (true) {
 		//    --audio-format FORMAT            Specify audio format: "best", "aac", "flac", "mp3", "m4a", "opus", "vorbis", or "wav"; "best" by default; No effect without -x
 		$fileExt = 'opus';
-		if ($SERVICE == 'vimeo' || $SERVICE == 'vevo' || $SERVICE == 'dailymotion') {
+		if ($SERVICE == 'vimeo' || $SERVICE == 'vevo' || $SERVICE == 'dailymotion' || $SERVICE == 'youtube') {
 			$fileExt = 'ogg';
 		} else if ($SERVICE == 'soundcloud') {
 			$fileExt = 'mp3';
@@ -95,14 +95,14 @@ if (!empty($ID) && !empty($SERVICE) && ($SERVICE == 'vimeo' || $SERVICE == 'vevo
 				}
 				
 			} else if ($SERVICE == "youtube") {
-				$API = curl("https://www.googleapis.com/youtube/v3/videos?id=".$ID."&part=snippet,contentDetails&key=AIzaSyA13fSbtHpcnGtjCMwGZdnm9PYMnhvs0hU");
+				$API = curl("https://www.googleapis.com/youtube/v3/videos?id=".$ID."&part=snippet,contentDetails&key=".google_youtube_apikey);
 				$API = json_decode($API, true);
 				
 				if (count($API['items']) > 0) {
 					
 					if ($API['items'][0]['snippet']['liveBroadcastContent'] != "live") {
 						
-						$lng = ISO8601ToSeconds($API['items'][0]['contentDetails']['duration']);
+						$lng = @ISO8601ToSeconds($API['items'][0]['contentDetails']['duration']);
 						if ($lng > 0 && $lng < (21*60)) {
 							$OK = true;
 							$title = $API['items'][0]['snippet']['title'];
@@ -182,7 +182,7 @@ if (!empty($ID) && !empty($SERVICE) && ($SERVICE == 'vimeo' || $SERVICE == 'vevo
 				
 				$API = curl("https://soundcloud.com/".$ID);
 				preg_match('/itemprop="duration" content="(.*?)"/', $API, $DUR);
-				$DUR = ISO8601ToSeconds($DUR[1]);
+				$DUR = @ISO8601ToSeconds($DUR[1]);
 				preg_match('/property="twitter:title" content="(.*?)"/', $API, $TTL);
 				$TTL = $TTL[1];
 				preg_match('/property="twitter:image" content="(.*?)"/', $API, $IMG);
@@ -208,9 +208,9 @@ if (!empty($ID) && !empty($SERVICE) && ($SERVICE == 'vimeo' || $SERVICE == 'vevo
 			
 			if ($OK) {
 				$DIRECT = "";
-				if ($SERVICE == 'youtube') {
+				/*if ($SERVICE == 'youtube') { // hotlink nicht mehr möglich (403)
 					$DIRECT = str_replace("\r", '', str_replace("\n", '', shell_exec('./youtube-dl --ffmpeg-location ./ -f "bestaudio[ext=webm]" --get-url "http://youtube.com/watch?v='.$ID.'"')));
-				} else if ($SERVICE == 'soundcloud') {
+				} else*/ if ($SERVICE == 'soundcloud') {
 					$DIRECT = str_replace("\r", '', str_replace("\n", '', shell_exec('./youtube-dl --ffmpeg-location ./ -f "bestaudio[ext=mp3]" --get-url "'.$uFix.$ID.'"')));
 				} else {
 					$cmd = './youtube-dl --ffmpeg-location ./ --add-metadata --no-cache-dir --rm-cache-dir --no-check-certificate --ignore-errors --rate-limit 5000K --extract-audio --audio-format '.(($fileExt=='ogg')?'vorbis':$fileExt).' "'.$uFix.$ID.'" -o "'.$fPthEx.'"';
@@ -277,7 +277,7 @@ function ISO8601ToSeconds($ISO8601)
     $minutes = substr($duration['minutes'], 0, -1);
     $seconds = substr($duration['seconds'], 0, -1);
 
-    $toltalSeconds = ($hours * 60 * 60) + ($minutes * 60) + $seconds;
+    $toltalSeconds = (@$hours * 60 * 60) + (@$minutes * 60) + @$seconds;
 
     return $toltalSeconds;
 }

@@ -9,13 +9,15 @@
 ***************************************************/
 
 
-error_reporting(E_ALL ^ E_NOTICE);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
+
 
 
 
 define("SALZ",							"REPLACE_ME");
 define("CHART_UPDATE_SECRET",			"REPLACE_ME");
 
+define("google_youtube_apikey",			"REPLACE_ME");
 define("openweathermap_apikey",			"REPLACE_ME");
 ?>
