@@ -16,7 +16,7 @@ $apiUser	= @$_REQUEST['apiUser'];
 $apiAuth	= @$_REQUEST['apiAuth'];
 $apiParam	= "apiUser=".urlencode($apiUser)."&apiAuth=".$apiAuth;
 
-if ((empty($apiUser) || empty($apiAuth) || strtolower(hash('sha256', $apiUser.SALZ)) != strtolower($apiAuth)) && !isset($_REQUEST['image']) && !isset($_REQUEST['update_charts'])) {
+if ((empty($apiUser) || empty($apiAuth) || strtolower(hash('sha256', $apiUser.SALZ)) != strtolower($apiAuth)) && !isset($_REQUEST['image']) && @$argv[1] != "CHARTUPDATE") {
 	header("Content-Type: text/html");
 	die('Authentication Failed!<br>Suck my 🍆');
 }
@@ -53,6 +53,8 @@ function curl($url, $data = null) {
 	return $result;
 }
 function getCurrentUrl() {
+	global $argv;
+	if (isset($argv[3])) { return $argv[3]; }
 	$url  = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
 	$url .= '://' . $_SERVER['SERVER_NAME'];
 	$url .= in_array( $_SERVER['SERVER_PORT'], array('80', '443') ) ? '' : ':' . $_SERVER['SERVER_PORT'];
@@ -320,18 +322,19 @@ if (isset($_REQUEST['s'])) {
 	$json = file_get_contents("charts.json");
 	echo str_replace('~~API_AUTH~~', $apiParam, $json);
 	
-} else if (isset($_REQUEST['update_charts']) && $_REQUEST['update_charts'] == CHART_UPDATE_SECRET) {
-	
+} else if (@$argv[1] == "CHARTUPDATE") {
 	/*
 		Den update prozess hier unbedingt als cronjob auslagern.
 		Bilder laden und compressen + Lyrics getten kann schon mal 3min dauern!
-		*/
-		
-		$JSON = json_decode(curl('https://api.mtvnn.com/v2/DE/charts/288.json'), true);
-		
-		$Charts = array();
-		foreach ($JSON['chart_instance']['chart_items'] as $k => $v) {
-			$_REQUEST['limit']=5;
+	*/
+	
+	$JSON = json_decode(curl('https://api.mtvnn.com/v2/DE/charts/288.json'), true);
+	
+	$Charts = array();
+	foreach ($JSON['chart_instance']['chart_items'] as $k => $v) {
+		if ($k >= (($argv[2]*10)-10) && $k < ($argv[2]*10)) {
+			
+			$_REQUEST['limit']=3;
 			
 			$iTunesName = trim(preg_replace('/\s*\([^)]*\)/', '', $v['artist_name']." - ".$v['title']));
 			
@@ -353,6 +356,7 @@ if (isset($_REQUEST['s'])) {
 				$a['mtv_name'] = strtolower($iTunesName);
 				$a['163_name'] = strtolower(trim(preg_replace('/\s*\([^)]*\)/', '', $a['artist']." - ".$a['title'])));
 				//$a['results'] = $s;
+				$a['k'] = $k;
 				
 				$Charts[] = $a;
 			} else {
@@ -368,12 +372,24 @@ if (isset($_REQUEST['s'])) {
 				);
 			}
 		}
+	}
+	
+	$out = json_encode($Charts, true);
+	file_put_contents("charts_".$argv[2].".json", $out);
+	
+	if ($argv[2] >= 5) {
+		$final = array();
+		for ($i = 1; $i <= 5; $i++) {
+			$j = json_decode(file_get_contents("charts_".$i.".json"), true);
+			$final = array_merge($final, $j);
+			@unlink("charts_".$i.".json");
+		}
+		$fx = json_encode($final, true);
+		file_put_contents("charts.json", $fx);
 		
-		$out = json_encode($Charts, true);
-		file_put_contents("charts.json", $out);
-		
-		echo $out;
-		
+		//echo $fx;
+	}
+	
 	
 } else {
 	echo 'ERROR';
