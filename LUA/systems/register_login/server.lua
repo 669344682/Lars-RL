@@ -132,7 +132,7 @@ local function registerPlayer(password, gebDatum, gender, email)
 		
 		local genTelNr = (function()
 			local telNR = math.random(10000,99999999)
-			local check = MySQL:rowExists("userdata", dbPrepareString("WHERE TelNR=?", telNR))
+			local check = MySQL:rowExists("userdata", dbPrepareString("TelNR=?", telNR))
 			if (not check) then
 				return telNR
 			end
@@ -140,7 +140,7 @@ local function registerPlayer(password, gebDatum, gender, email)
 		end)
 		
 		local JobLevelEarn = '{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0}'
-		local result = dbExec("INSERT INTO userdata (Name, SpawnPos, Playingtime, Money, BankMoney, Kills, Deaths, Jailtime, Deathtime, Wanteds, Stvo, Adminlvl, LastFactionChange, Faction, Job, JobLevels, JobEarnings, SkinID, TelNR, SocialState, MaxCars, Inventory, Hunger) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", pName, toJSON(settings.general.defaultSpawn), 0, settings.general.startMoneyHand, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, JobLevelEarn, JobLevelEarn, skinID, genTelNr(), settings.general.noobSocialState, settings.general.noobMaxCars, '{"creditcard":1,"iphone":1}', 100)
+		local result = dbExec("INSERT INTO userdata (Name, SpawnPos, Playingtime, Money, BankMoney, Kills, Deaths, Jailtime, Deathtime, Wanteds, Stvo, Adminlvl, LastFactionChange, Faction, FactionRank, FactionRankName, FactionGehalt, Job, JobLevels, JobEarnings, SkinID, TelNR, SocialState, MaxCars, Inventory, Hunger) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", pName, toJSON(settings.general.defaultSpawn), 0, settings.general.startMoneyHand, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, JobLevelEarn, JobLevelEarn, skinID, genTelNr(), settings.general.noobSocialState, settings.general.noobMaxCars, '{"creditcard":1,"iphone":1}', 100)
 		if (not result) then
 			notificationShow(source, "error", "Fehler bei der Registrierung! Versuche es erneut oder wende dich an einen Admin. (MySQL-Insert: userdata)")
 			deletePlayerAccount(pName)
